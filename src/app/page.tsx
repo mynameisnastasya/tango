@@ -11,6 +11,7 @@ const navLinks = [
   { label: 'Контакт', href: '#contact' },
 ]
 
+const services = ['landing pages', 'personal brand', 'marketing packaging']
 const videoUrl = 'https://cdn.pixabay.com/video/2016/11/15/6400-191716659_large.mp4'
 
 export default function Home() {
@@ -35,10 +36,13 @@ export default function Home() {
       <div className="overlay-gradient" />
       <div className="overlay-radial" />
       <div className="video-grain" />
+      <div className="editorial-line line-left" />
+      <div className="editorial-line line-right" />
 
       <nav className="navbar" aria-label="Основная навигация">
         <div className="navbar-left">
           <a href="#home" className="logo-group" onClick={() => setMobileMenuOpen(false)}>
+            <span className="logo-mark" aria-hidden="true" />
             <span className="logo-text">Настасья</span>
             <span className="logo-descriptor">web / marketing / visual</span>
           </a>
@@ -71,6 +75,7 @@ export default function Home() {
 
       <div className={`mobile-menu ${mobileMenuOpen ? 'menu-open' : 'menu-closed'}`}>
         <div className={`mobile-menu-inner ${mobileMenuOpen ? 'inner-open' : 'inner-closed'}`}>
+          <div className="mobile-menu-kicker">premium web studio</div>
           <div className="mobile-links">
             {navLinks.map((link) => (
               <a key={link.label} href={link.href} onClick={() => setMobileMenuOpen(false)}>
@@ -87,21 +92,67 @@ export default function Home() {
       </div>
 
       <section className="hero-content">
-        <div className="hero-top">
-          <p className="hero-badge">
-            <Sparkles size={14} />
-            Маркетинг • сайты • визуальная упаковка
-          </p>
+        <div className="hero-shell">
+          <div className="hero-top">
+            <p className="hero-badge">
+              <Sparkles size={14} />
+              Маркетинг • сайты • визуальная упаковка
+            </p>
 
-          <h1>
-            Сайты, которые<br />
-            выглядят дорого<br />
-            и продают без крика.
-          </h1>
+            <h1>
+              Сайты, которые<br />
+              выглядят дорого<br />
+              и продают без крика.
+            </h1>
 
-          <p className="hero-subheading">
-            Для экспертов и брендов, которым нужен не просто красивый экран, а сильная упаковка, понятный оффер и сайт, после которого хочется доверять.
-          </p>
+            <p className="hero-subheading">
+              Для экспертов и брендов, которым нужен не просто красивый экран, а сильная упаковка, понятный оффер и сайт, после которого хочется доверять.
+            </p>
+
+            <div className="service-strip" aria-label="Форматы работы">
+              {services.map((service) => (
+                <span key={service}>{service}</span>
+              ))}
+            </div>
+          </div>
+
+          <aside className="case-preview" aria-label="Превью подхода Настасьи">
+            <div className="case-preview-top">
+              <span>selected direction</span>
+              <span>2026</span>
+            </div>
+            <div className="case-window">
+              <div className="window-bar">
+                <i />
+                <i />
+                <i />
+              </div>
+              <div className="window-hero">
+                <span>brand meaning</span>
+                <strong>structure that converts</strong>
+              </div>
+              <div className="window-grid">
+                <span />
+                <span />
+                <span />
+                <span />
+              </div>
+            </div>
+            <div className="preview-stats">
+              <div>
+                <strong>01</strong>
+                <span>смыслы</span>
+              </div>
+              <div>
+                <strong>02</strong>
+                <span>визуал</span>
+              </div>
+              <div>
+                <strong>03</strong>
+                <span>заявки</span>
+              </div>
+            </div>
+          </aside>
         </div>
 
         <div className="hero-bottom-wrap">

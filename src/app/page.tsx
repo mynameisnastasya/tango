@@ -1,16 +1,17 @@
 'use client'
 
 import { useState } from 'react'
-import { ArrowRight, Menu, X } from 'lucide-react'
+import { ArrowRight, Menu, Sparkles, X } from 'lucide-react'
 
 const navLinks = [
   { label: 'Главная', href: '#home' },
   { label: 'Кейсы', href: '#cases' },
   { label: 'Подход', href: '#approach' },
-  { label: 'Связаться', href: '#contact' },
+  { label: 'Услуги', href: '#services' },
+  { label: 'Контакт', href: '#contact' },
 ]
 
-const videoUrl = 'https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260622_204221_5339e40b-e73d-4ab0-9c65-79c18c66fd50.mp4'
+const videoUrl = 'https://assets.mixkit.co/videos/4291/4291-720.mp4'
 
 export default function Home() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -19,23 +20,29 @@ export default function Home() {
     <main className="landing-root" id="home">
       <span id="cases" className="anchor-point" aria-hidden="true" />
       <span id="approach" className="anchor-point" aria-hidden="true" />
+      <span id="services" className="anchor-point" aria-hidden="true" />
       <span id="contact" className="anchor-point" aria-hidden="true" />
 
       <video
+        className="background-video"
+        src={videoUrl}
         autoPlay
         muted
         loop
         playsInline
-        className="background-video"
-        src={videoUrl}
       />
-      <div className="video-overlay" />
+      <div className="overlay-dark" />
+      <div className="overlay-gradient" />
+      <div className="overlay-radial" />
+      <div className="video-grain" />
 
       <nav className="navbar" aria-label="Основная навигация">
         <div className="navbar-left">
-          <a href="#home" className="logo-text" onClick={() => setMobileMenuOpen(false)}>
-            Настасья
+          <a href="#home" className="logo-group" onClick={() => setMobileMenuOpen(false)}>
+            <span className="logo-text">Настасья</span>
+            <span className="logo-descriptor">web / marketing / visual</span>
           </a>
+
           <div className="desktop-links">
             {navLinks.map((link) => (
               <a key={link.label} href={link.href}>
@@ -46,7 +53,8 @@ export default function Home() {
         </div>
 
         <a className="desktop-cta" href="#contact">
-          Обсудить сайт
+          Обсудить проект
+          <ArrowRight size={15} />
         </a>
 
         <button
@@ -56,48 +64,79 @@ export default function Home() {
           aria-expanded={mobileMenuOpen}
           onClick={() => setMobileMenuOpen((open) => !open)}
         >
-          <Menu className={`toggle-icon menu-icon ${mobileMenuOpen ? 'hidden-icon' : 'visible-icon'}`} size={22} />
-          <X className={`toggle-icon x-icon ${mobileMenuOpen ? 'visible-icon' : 'hidden-icon'}`} size={22} />
+          <Menu className={`toggle-icon menu-icon ${mobileMenuOpen ? 'hidden-icon' : 'visible-icon'}`} size={20} />
+          <X className={`toggle-icon x-icon ${mobileMenuOpen ? 'visible-icon' : 'hidden-icon'}`} size={20} />
         </button>
       </nav>
 
       <div className={`mobile-menu ${mobileMenuOpen ? 'menu-open' : 'menu-closed'}`}>
         <div className={`mobile-menu-inner ${mobileMenuOpen ? 'inner-open' : 'inner-closed'}`}>
-          {navLinks.map((link) => (
-            <a key={link.label} href={link.href} onClick={() => setMobileMenuOpen(false)}>
-              {link.label}
-            </a>
-          ))}
+          <div className="mobile-links">
+            {navLinks.map((link) => (
+              <a key={link.label} href={link.href} onClick={() => setMobileMenuOpen(false)}>
+                {link.label}
+              </a>
+            ))}
+          </div>
+
           <a className="mobile-cta" href="#contact" onClick={() => setMobileMenuOpen(false)}>
-            Обсудить проект
+            Обсудить сайт
+            <ArrowRight size={16} />
           </a>
         </div>
       </div>
 
       <section className="hero-content">
         <div className="hero-top">
-          <p className="hero-badge">Маркетинг • Дизайн • Сайты</p>
+          <p className="hero-badge">
+            <Sparkles size={14} />
+            Маркетинг • сайты • визуальная упаковка
+          </p>
+
           <h1>
-            Создаю сайты,<br />
-            которые выглядят дорого<br />
-            и приводят клиентов.
+            Сайты, которые<br />
+            выглядят дорого<br />
+            и продают без крика.
           </h1>
+
+          <p className="hero-subheading">
+            Для экспертов и брендов, которым нужен не просто красивый экран, а сильная упаковка, понятный оффер и сайт, после которого хочется доверять.
+          </p>
         </div>
 
-        <div className="hero-bottom">
-          <p>
-            Соединяю маркетинг, визуальную эстетику и продуманную структуру, чтобы сайт не просто красиво выглядел, а продавал, объяснял ценность и усиливал доверие к бренду.
-          </p>
-          <a className="hero-button" href="#cases">
-            Смотреть кейсы
-            <ArrowRight size={16} />
-          </a>
+        <div className="hero-bottom-wrap">
+          <div className="thin-line" />
+
+          <div className="hero-bottom">
+            <div className="bottom-left">
+              <p>
+                Я соединяю стратегию, визуал и структуру, чтобы сайт не просто “был”, а работал: объяснял ценность, усиливал бренд и превращал внимание в заявки.
+              </p>
+
+              <div className="availability-chip">
+                <span />
+                доступна для 2 проектов в месяц
+              </div>
+            </div>
+
+            <div className="cta-group">
+              <a className="hero-button primary" href="#cases">
+                Смотреть кейсы
+                <ArrowRight size={16} />
+              </a>
+              <a className="hero-button secondary" href="#approach">
+                Узнать подход
+              </a>
+            </div>
+
+            <div className="micro-label" aria-hidden="true">
+              <span>01 / HERO</span>
+              <span>STRATEGY FIRST</span>
+              <span>DESIGN THAT SELLS</span>
+            </div>
+          </div>
         </div>
       </section>
-
-      <div className="desktop-corner-label">
-        Websites / Strategy / Visual Identity
-      </div>
     </main>
   )
 }

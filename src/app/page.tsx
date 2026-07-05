@@ -3,7 +3,13 @@
 import { useState } from 'react'
 import { ArrowRight, Menu, X } from 'lucide-react'
 
-const navLinks = ['Главная', 'Кейсы', 'Подход', 'Связаться']
+const navLinks = [
+  { label: 'Главная', href: '#home' },
+  { label: 'Кейсы', href: '#cases' },
+  { label: 'Подход', href: '#approach' },
+  { label: 'Связаться', href: '#contact' },
+]
+
 const videoUrl = 'https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260622_204221_5339e40b-e73d-4ab0-9c65-79c18c66fd50.mp4'
 
 export default function Home() {
@@ -11,6 +17,10 @@ export default function Home() {
 
   return (
     <main className="landing-root" id="home">
+      <span id="cases" className="anchor-point" aria-hidden="true" />
+      <span id="approach" className="anchor-point" aria-hidden="true" />
+      <span id="contact" className="anchor-point" aria-hidden="true" />
+
       <video
         autoPlay
         muted
@@ -28,14 +38,14 @@ export default function Home() {
           </a>
           <div className="desktop-links">
             {navLinks.map((link) => (
-              <a key={link} href={`#${link.toLowerCase()}`}>
-                {link}
+              <a key={link.label} href={link.href}>
+                {link.label}
               </a>
             ))}
           </div>
         </div>
 
-        <a className="desktop-cta" href="#связаться">
+        <a className="desktop-cta" href="#contact">
           Обсудить сайт
         </a>
 
@@ -54,11 +64,11 @@ export default function Home() {
       <div className={`mobile-menu ${mobileMenuOpen ? 'menu-open' : 'menu-closed'}`}>
         <div className={`mobile-menu-inner ${mobileMenuOpen ? 'inner-open' : 'inner-closed'}`}>
           {navLinks.map((link) => (
-            <a key={link} href={`#${link.toLowerCase()}`} onClick={() => setMobileMenuOpen(false)}>
-              {link}
+            <a key={link.label} href={link.href} onClick={() => setMobileMenuOpen(false)}>
+              {link.label}
             </a>
           ))}
-          <a className="mobile-cta" href="#связаться" onClick={() => setMobileMenuOpen(false)}>
+          <a className="mobile-cta" href="#contact" onClick={() => setMobileMenuOpen(false)}>
             Обсудить проект
           </a>
         </div>
@@ -78,7 +88,7 @@ export default function Home() {
           <p>
             Соединяю маркетинг, визуальную эстетику и продуманную структуру, чтобы сайт не просто красиво выглядел, а продавал, объяснял ценность и усиливал доверие к бренду.
           </p>
-          <a className="hero-button" href="#кейсы">
+          <a className="hero-button" href="#cases">
             Смотреть кейсы
             <ArrowRight size={16} />
           </a>

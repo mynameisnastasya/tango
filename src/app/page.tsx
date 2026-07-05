@@ -11,7 +11,7 @@ const navLinks = [
   { label: 'Контакт', href: '#contact' },
 ]
 
-const videoUrl = 'https://assets.mixkit.co/videos/4291/4291-720.mp4'
+const videoUrl = 'https://cdn.pixabay.com/video/2016/11/15/6400-191716659_large.mp4'
 
 export default function Home() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)

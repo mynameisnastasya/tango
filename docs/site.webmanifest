@@ -1,0 +1,19 @@
+{
+  "name": "Nastasya Digital Brand",
+  "short_name": "Nastasya",
+  "description": "Сайты и digital-упаковка под заявки",
+  "lang": "ru",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f4efe7",
+  "theme_color": "#6e2638",
+  "icons": [
+    {
+      "src": "./icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

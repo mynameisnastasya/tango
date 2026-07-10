@@ -1,44 +1,42 @@
-# Nastasya Portfolio Website
+# Nastasya Digital Brand
 
-Premium one-page portfolio website for Nastasya: web design, marketing packaging, landing pages and personal brand sites.
+Полноценный одностраничный продающий сайт Настасьи: сайты, офферы, digital-упаковка, Telegram-воронки и AI-визуал.
 
-## Tech stack
+## Live
 
-- Next.js 15
-- React 18
-- TypeScript
-- Custom CSS animations
-- Vercel-ready config
+https://nastaysa1337.github.io/tango/
 
-## Run locally
+## Что есть на сайте
 
-```bash
-npm install
-npm run dev
-```
+- сильный первый экран и позиционирование;
+- блок боли и объяснение подхода;
+- услуги и форматы работы;
+- кому подходит продукт;
+- процесс из шести этапов;
+- демонстрационные разборы «до / после»;
+- рабочая форма мини-аудита через подготовленное email-письмо;
+- блок «Обо мне», FAQ и контакты;
+- мобильное меню и адаптивная версия;
+- доступность: skip-link, focus states, aria-атрибуты, reduced motion;
+- SEO: metadata, Open Graph, JSON-LD, sitemap.xml и robots.txt;
+- web manifest, иконка и фирменная 404-страница.
 
-Open http://localhost:3000
+## Публикационная версия
 
-## Build
+GitHub Pages использует каталог `docs/`:
 
-```bash
-npm run build
-npm run start
-```
+- `docs/index.html` — весь опубликованный сайт;
+- `docs/og.svg` — изображение для превью ссылок;
+- `docs/icon.svg` — иконка сайта;
+- `docs/site.webmanifest` — web manifest;
+- `docs/robots.txt` — правила индексации;
+- `docs/sitemap.xml` — карта сайта;
+- `docs/404.html` — страница ошибки.
 
-## Deploy to Vercel
+## Next.js-версия
 
-1. Go to Vercel.
-2. Import repository `nastaysa1337/tango`.
-3. Framework preset: Next.js.
-4. Build command: `npm run build`.
-5. Deploy.
+Исходная компонентная версия находится в `nastasya-digital-brand/`. Она остаётся заготовкой для дальнейшего переноса сайта на Next.js/Vercel, когда понадобится серверная форма, CMS или расширенная аналитика.
 
-## Main files
+## Контакты
 
-- `src/app/page.tsx` — full landing page content
-- `src/app/globals.css` — luxury visual style and animations
-- `src/app/layout.tsx` — metadata and layout
-- `public/favicon.svg` — favicon
-- `public/og.svg` — Open Graph image
-- `vercel.json` — Vercel settings
+Заявки на сайте готовятся для отправки на `nastasyabaklykova@gmail.com`. Официальная Telegram-ссылка намеренно не добавлена до получения точного username.

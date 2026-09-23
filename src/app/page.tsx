@@ -19,15 +19,6 @@ type Settings = {
   faq_en?: string[][]
   faq_ru?: string[][]
 }
-type Referral = {
-  code: string
-  agency_name: string
-  recruiter: string
-  market: string
-  onboarding_bonus: string
-  active: boolean
-}
-
 const initialSettings: Settings = {
   welcome_bonus: '4,000–5,000 coins',
   milestone_title: '100,000 Diamond Milestone',
@@ -51,14 +42,11 @@ const copy = {
     learn: 'Learn How It Works',
     realOnly: 'Real broadcasters only',
     noFake: 'No prerecorded or fake broadcasts',
-    referralTitle: 'Have a Referral Code?',
-    referralSub: 'Enter your agency or recruiter code. We will connect your application to the right manager.',
-    referralPlaceholder: 'Enter your referral / agency code',
-    applyCode: 'Apply Code',
-    applied: 'Referral code successfully applied',
-    invalid: 'We could not find this referral code.',
-    manager: 'Assigned manager',
-    bonus: 'Onboarding bonus',
+    tangoCodeTitle: 'Connect to ABHI AGANCY on Tango',
+    tangoCodeSub: 'Use this agency code inside the Tango app when connecting your broadcaster account to ABHI AGANCY. This code is entered in Tango — not on this website.',
+    tangoCodeLabel: 'Tango Agency Code',
+    copyCode: 'Copy Code',
+    copied: 'Copied',
     journey: 'A clear path from application to first withdrawal',
     journeySub: 'You do not need to figure everything out alone. Our team guides new broadcasters during onboarding.',
     offer: 'What We Offer',
@@ -90,7 +78,7 @@ const copy = {
       name:'Name', country:'Country', languages:'Languages', telegram:'Telegram username',
       whatsapp:'WhatsApp', instagram:'Instagram username', platform:'Current streaming platform',
       experience:'Previous live-streaming experience', username:'Current Tango / SuperLive / Bigo / etc. username',
-      referral:'Referral code', hours:'How many hours per week can you stream?', message:'Short message / introduction'
+      hours:'How many hours per week can you stream?', message:'Short message / introduction'
     },
     age: 'I am 18 years or older',
     footer: 'Premium talent management for real live broadcasters.',
@@ -107,14 +95,11 @@ const copy = {
     learn: 'Как это работает',
     realOnly: 'Только реальные стримеры',
     noFake: 'Без записанных и фейковых трансляций',
-    referralTitle: 'Есть Referral Code?',
-    referralSub: 'Введи код агентства или рекрутера — заявка автоматически попадёт к нужному менеджеру.',
-    referralPlaceholder: 'Введи referral / agency code',
-    applyCode: 'Применить код',
-    applied: 'Referral code успешно применён',
-    invalid: 'Такой referral code не найден.',
-    manager: 'Твой менеджер',
-    bonus: 'Onboarding-бонус',
+    tangoCodeTitle: 'Подключись к ABHI AGANCY в Tango',
+    tangoCodeSub: 'Этот код нужно ввести внутри приложения Tango при подключении своего аккаунта стримера к ABHI AGANCY. На этом сайте вводить его не нужно.',
+    tangoCodeLabel: 'Код агентства в Tango',
+    copyCode: 'Скопировать код',
+    copied: 'Скопировано',
     journey: 'Понятный путь от заявки до первого вывода',
     journeySub: 'Не нужно разбираться во всём одной. Команда сопровождает новых стримеров во время onboarding.',
     offer: 'Что мы даём',
@@ -146,7 +131,7 @@ const copy = {
       name:'Имя', country:'Страна', languages:'Языки', telegram:'Telegram username',
       whatsapp:'WhatsApp', instagram:'Instagram username', platform:'Текущая стриминг-платформа',
       experience:'Опыт live-стриминга', username:'Ник в Tango / SuperLive / Bigo / etc.',
-      referral:'Referral code', hours:'Сколько часов в неделю можешь стримить?', message:'Коротко о себе'
+      hours:'Сколько часов в неделю можешь стримить?', message:'Коротко о себе'
     },
     age: 'Мне 18 лет или больше',
     footer: 'Премиальное talent management агентство для реальных live-стримеров.',
@@ -155,12 +140,12 @@ const copy = {
 
 const steps = {
   en: [
-    ['01','Submit your application'], ['02','Receive your agency invitation / referral code'],
+    ['01','Submit your application'], ['02','Receive Tango connection instructions and the agency code'],
     ['03','Create or connect your broadcaster account'], ['04','Complete onboarding and start streaming'],
     ['05','Earn coins / diamonds and make your first withdrawal'],
   ],
   ru: [
-    ['01','Отправь заявку'], ['02','Получи приглашение / referral code агентства'],
+    ['01','Отправь заявку'], ['02','Получи инструкцию для подключения в Tango и код агентства'],
     ['03','Создай или подключи broadcaster account'], ['04','Пройди onboarding и начни эфиры'],
     ['05','Зарабатывай coins / diamonds и сделай первый вывод'],
   ],
@@ -193,7 +178,7 @@ const faqs = {
     ['Is joining the agency free?', 'Yes. ABHI AGANCY does not charge an application or joining fee. Platform and campaign rules may differ.'],
     ['Do I need previous experience?', 'No. Beginners can apply and receive onboarding support.'],
     ['Can beginners join?', 'Yes, if you are 18+ and willing to learn and follow platform rules.'],
-    ['How do I receive a referral code?', 'A recruiter or manager may provide one, or you can apply directly and be assigned to the agency.'],
+    ['What is the Tango Agency Code?', 'KCu4ZY is the ABHI AGANCY code used inside Tango when connecting your broadcaster account to our agency. Detailed step-by-step instructions will be added separately.'],
     ['What is FTR?', 'First Time Redeemer: your first successful eligible withdrawal after reaching the required platform balance.'],
     ['When can I withdraw earnings?', 'Withdrawal timing depends on the platform rules, balance requirements and your account eligibility.'],
     ['Are bonuses guaranteed?', 'No. Bonuses and campaigns can change and are confirmed by your manager before participation.'],
@@ -207,7 +192,7 @@ const faqs = {
     ['Вступление в агентство бесплатное?', 'Да. ABHI AGANCY не берёт плату за заявку или вступление. Правила платформ и кампаний могут отличаться.'],
     ['Нужен ли опыт?', 'Нет. Новички могут подать заявку и пройти onboarding.'],
     ['Можно ли новичкам?', 'Да, если тебе 18+ и ты готова учиться и соблюдать правила платформы.'],
-    ['Как получить referral code?', 'Код может дать рекрутер или менеджер. Также можно оставить прямую заявку и получить назначение в агентство.'],
+    ['Что такое Tango Agency Code?', 'KCu4ZY — код ABHI AGANCY, который вводится внутри Tango при подключении аккаунта стримера к нашему агентству. Пошаговую инструкцию мы добавим отдельно.'],
     ['Что такое FTR?', 'First Time Redeemer — первый успешный вывод после достижения необходимого баланса и выполнения условий платформы.'],
     ['Когда можно вывести деньги?', 'Сроки зависят от правил платформы, минимального баланса и eligibility аккаунта.'],
     ['Бонусы гарантированы?', 'Нет. Условия и кампании могут меняться и подтверждаются менеджером до участия.'],
@@ -227,9 +212,7 @@ export default function Home() {
   const [lang, setLang] = useState<Lang>('en')
   const [menu, setMenu] = useState(false)
   const [settings, setSettings] = useState<Settings>(initialSettings)
-  const [referral, setReferral] = useState('')
-  const [refData, setRefData] = useState<Referral | null>(null)
-  const [refState, setRefState] = useState<'idle'|'loading'|'valid'|'invalid'>('idle')
+  const [copiedCode, setCopiedCode] = useState(false)
   const [openFaq, setOpenFaq] = useState<number | null>(0)
   const [sending, setSending] = useState(false)
   const [sent, setSent] = useState(false)
@@ -239,32 +222,15 @@ export default function Home() {
 
   useEffect(() => {
     fetch('/api/settings').then(r => r.ok ? r.json() : null).then(x => x && setSettings(x)).catch(() => {})
-    const params = new URLSearchParams(window.location.search)
-    const urlRef = params.get('ref')
-    const stored = localStorage.getItem('abhi_referral')
-    const value = urlRef || stored || ''
-    if (value) {
-      setReferral(value)
-      applyReferral(value)
-    }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
-  async function applyReferral(code = referral) {
-    const clean = code.trim()
-    if (!clean) return
-    setRefState('loading')
+  async function copyTangoCode() {
     try {
-      const res = await fetch('/api/referrals?code=' + encodeURIComponent(clean))
-      if (!res.ok) throw new Error()
-      const data = await res.json()
-      setRefData(data)
-      setReferral(data.code)
-      localStorage.setItem('abhi_referral', data.code)
-      setRefState('valid')
+      await navigator.clipboard.writeText('KCu4ZY')
+      setCopiedCode(true)
+      window.setTimeout(() => setCopiedCode(false), 1800)
     } catch {
-      setRefData(null)
-      setRefState('invalid')
+      setCopiedCode(false)
     }
   }
 
@@ -277,7 +243,7 @@ export default function Home() {
       ...data,
       age_confirmed: fd.get('age_confirmed') === 'on',
       consent: fd.get('consent') === 'on',
-      referral_code: referral,
+      referral_code: '',
       source: window.location.href,
     }
     try {
@@ -358,26 +324,20 @@ export default function Home() {
       </section>
 
       <section className="section referral-section">
-        <div className="referral-card">
+        <div className="referral-card tango-code-card">
           <div>
-            <div className="eyebrow gold-text"><Target size={15}/> Referral system</div>
-            <h2>{t.referralTitle}</h2>
-            <p>{t.referralSub}</p>
+            <div className="eyebrow gold-text"><Target size={15}/> TANGO • AGENCY CONNECTION</div>
+            <h2>{t.tangoCodeTitle}</h2>
+            <p>{t.tangoCodeSub}</p>
           </div>
-          <div className="ref-box">
-            <div className="ref-input-wrap">
-              <input value={referral} onChange={e=>setReferral(e.target.value)} placeholder={t.referralPlaceholder}/>
-              <button onClick={()=>applyReferral()} disabled={refState==='loading'}>{t.applyCode}</button>
-            </div>
-            {refState==='valid' && refData && <div className="ref-success">
-              <div className="success-title"><Check size={17}/>{t.applied}</div>
-              <div className="ref-details">
-                <span><small>Agency</small><b>{refData.agency_name}</b></span>
-                <span><small>{t.manager}</small><b>{refData.recruiter}</b></span>
-                <span><small>{t.bonus}</small><b>{refData.onboarding_bonus}</b></span>
-              </div>
-            </div>}
-            {refState==='invalid' && <p className="error-text">{t.invalid}</p>}
+          <div className="tango-code-box">
+            <small>{t.tangoCodeLabel}</small>
+            <div className="tango-code">KCu4ZY</div>
+            <button className="button gold tango-copy" onClick={copyTangoCode}>
+              {copiedCode ? <Check size={17}/> : <Target size={17}/>}
+              {copiedCode ? t.copied : t.copyCode}
+            </button>
+            <p className="tango-code-help">Tango → connect your broadcaster account → enter <b>KCu4ZY</b></p>
           </div>
         </div>
       </section>
@@ -478,7 +438,6 @@ export default function Home() {
               <label>{t.form.platform}<input name="platform" placeholder="Tango, SuperLive, Bigo..."/></label>
               <label>{t.form.username}<input name="username"/></label>
               <label className="full">{t.form.experience}<textarea name="experience" rows={3}/></label>
-              <label>{t.form.referral}<input name="referral_code" value={referral} onChange={e=>setReferral(e.target.value)}/></label>
               <label>{t.form.hours}<input name="hours_per_week" placeholder="10, 20, 30..."/></label>
               <label className="full">{t.form.message}<textarea name="message" rows={4}/></label>
             </div>

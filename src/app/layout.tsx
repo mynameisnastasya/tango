@@ -2,11 +2,11 @@ import type { Metadata } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'ABHI AGANCY — Live Streaming Talent Agency',
-  description: 'Join ABHI AGANCY for personal onboarding, creator support, live-streaming guidance, milestones and an international creator community.',
+  title: 'ABHI AGENCY — Live Streaming Talent Agency',
+  description: 'Join ABHI AGENCY for personal onboarding, creator support, live-streaming guidance, milestones and an international creator community.',
   metadataBase: new URL('https://example.com'),
   openGraph: {
-    title: 'ABHI AGANCY',
+    title: 'ABHI AGENCY',
     description: 'Your manager from day one. Your agency for the long run.',
     type: 'website',
   },

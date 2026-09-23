@@ -1,4 +1,4 @@
--- ABHI AGENCY Supabase schema
+-- ABHIGREEN Supabase schema
 -- Run this in Supabase SQL Editor. The website uses the service role key only on the server.
 
 create extension if not exists pgcrypto;
@@ -32,7 +32,7 @@ create table if not exists public.referral_codes (
   id uuid primary key default gen_random_uuid(),
   created_at timestamptz not null default now(),
   code text not null unique,
-  agency_name text not null default 'ABHI AGENCY',
+  agency_name text not null default 'ABHIGREEN',
   recruiter text default '',
   market text default 'International',
   onboarding_bonus text default '',

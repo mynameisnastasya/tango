@@ -36,14 +36,14 @@ const copy = {
     eyebrow: 'International creator management • 18+',
     h1a: 'Start Your Live',
     h1b: 'Streaming Journey',
-    h1c: 'with ABHI AGANCY',
+    h1c: 'with ABHI AGENCY',
     sub: 'Join an international agency, receive personal support, onboarding, bonuses and guidance from your first stream to your first withdrawal.',
     joinNow: 'Join Now',
     learn: 'Learn How It Works',
     realOnly: 'Real broadcasters only',
     noFake: 'No prerecorded or fake broadcasts',
-    tangoCodeTitle: 'Connect to ABHI AGANCY on Tango',
-    tangoCodeSub: 'Use this agency code inside the Tango app when connecting your broadcaster account to ABHI AGANCY. This code is entered in Tango — not on this website.',
+    tangoCodeTitle: 'Connect to ABHI AGENCY on Tango',
+    tangoCodeSub: 'Use this agency code inside the Tango app when connecting your broadcaster account to ABHI AGENCY. This code is entered in Tango — not on this website.',
     tangoCodeLabel: 'Tango Agency Code',
     copyCode: 'Copy Code',
     copied: 'Copied',
@@ -89,14 +89,14 @@ const copy = {
     eyebrow: 'Международное creator-агентство • 18+',
     h1a: 'Начни свой путь',
     h1b: 'в live-стриминге',
-    h1c: 'с ABHI AGANCY',
+    h1c: 'с ABHI AGENCY',
     sub: 'Присоединяйся к международному агентству и получай персональное сопровождение, onboarding, бонусы и помощь от первого эфира до первого вывода.',
     joinNow: 'Присоединиться',
     learn: 'Как это работает',
     realOnly: 'Только реальные стримеры',
     noFake: 'Без записанных и фейковых трансляций',
-    tangoCodeTitle: 'Подключись к ABHI AGANCY в Tango',
-    tangoCodeSub: 'Этот код нужно ввести внутри приложения Tango при подключении своего аккаунта стримера к ABHI AGANCY. На этом сайте вводить его не нужно.',
+    tangoCodeTitle: 'Подключись к ABHI AGENCY в Tango',
+    tangoCodeSub: 'Этот код нужно ввести внутри приложения Tango при подключении своего аккаунта стримера к ABHI AGENCY. На этом сайте вводить его не нужно.',
     tangoCodeLabel: 'Код агентства в Tango',
     copyCode: 'Скопировать код',
     copied: 'Скопировано',
@@ -175,10 +175,10 @@ const criteria = {
 
 const faqs = {
   en: [
-    ['Is joining the agency free?', 'Yes. ABHI AGANCY does not charge an application or joining fee. Platform and campaign rules may differ.'],
+    ['Is joining the agency free?', 'Yes. ABHI AGENCY does not charge an application or joining fee. Platform and campaign rules may differ.'],
     ['Do I need previous experience?', 'No. Beginners can apply and receive onboarding support.'],
     ['Can beginners join?', 'Yes, if you are 18+ and willing to learn and follow platform rules.'],
-    ['What is the Tango Agency Code?', 'KCu4ZY is the ABHI AGANCY code used inside Tango when connecting your broadcaster account to our agency. Detailed step-by-step instructions will be added separately.'],
+    ['What is the Tango Agency Code?', 'KCu4ZY is the ABHI AGENCY code used inside Tango when connecting your broadcaster account to our agency. Detailed step-by-step instructions will be added separately.'],
     ['What is FTR?', 'First Time Redeemer: your first successful eligible withdrawal after reaching the required platform balance.'],
     ['When can I withdraw earnings?', 'Withdrawal timing depends on the platform rules, balance requirements and your account eligibility.'],
     ['Are bonuses guaranteed?', 'No. Bonuses and campaigns can change and are confirmed by your manager before participation.'],
@@ -186,13 +186,13 @@ const faqs = {
     ['Can I work with other agencies?', 'This depends on the platform and your existing agency agreement. Ask your manager before joining another agency.'],
     ['What if my account belongs to another agency?', 'Tell us before onboarding. We will explain the available options under the platform rules.'],
     ['Do I need to stream every day?', 'Not necessarily. Consistency matters, but the recommended schedule depends on your goals and platform conditions.'],
-    ['Are prerecorded streams allowed?', 'No. ABHI AGANCY accepts real live broadcasters only.'],
+    ['Are prerecorded streams allowed?', 'No. ABHI AGENCY accepts real live broadcasters only.'],
   ],
   ru: [
-    ['Вступление в агентство бесплатное?', 'Да. ABHI AGANCY не берёт плату за заявку или вступление. Правила платформ и кампаний могут отличаться.'],
+    ['Вступление в агентство бесплатное?', 'Да. ABHI AGENCY не берёт плату за заявку или вступление. Правила платформ и кампаний могут отличаться.'],
     ['Нужен ли опыт?', 'Нет. Новички могут подать заявку и пройти onboarding.'],
     ['Можно ли новичкам?', 'Да, если тебе 18+ и ты готова учиться и соблюдать правила платформы.'],
-    ['Что такое Tango Agency Code?', 'KCu4ZY — код ABHI AGANCY, который вводится внутри Tango при подключении аккаунта стримера к нашему агентству. Пошаговую инструкцию мы добавим отдельно.'],
+    ['Что такое Tango Agency Code?', 'KCu4ZY — код ABHI AGENCY, который вводится внутри Tango при подключении аккаунта стримера к нашему агентству. Пошаговую инструкцию мы добавим отдельно.'],
     ['Что такое FTR?', 'First Time Redeemer — первый успешный вывод после достижения необходимого баланса и выполнения условий платформы.'],
     ['Когда можно вывести деньги?', 'Сроки зависят от правил платформы, минимального баланса и eligibility аккаунта.'],
     ['Бонусы гарантированы?', 'Нет. Условия и кампании могут меняться и подтверждаются менеджером до участия.'],
@@ -200,12 +200,12 @@ const faqs = {
     ['Можно работать с другими агентствами?', 'Это зависит от правил платформы и твоих действующих агентских условий. Лучше уточнить у менеджера.'],
     ['Что если аккаунт уже в другом агентстве?', 'Скажи об этом до onboarding. Мы объясним доступные варианты по правилам платформы.'],
     ['Нужно стримить каждый день?', 'Не обязательно. Важна регулярность, а график зависит от целей и условий платформы.'],
-    ['Записанные эфиры разрешены?', 'Нет. ABHI AGANCY принимает только реальных live-стримеров.'],
+    ['Записанные эфиры разрешены?', 'Нет. ABHI AGENCY принимает только реальных live-стримеров.'],
   ],
 }
 
 function Logo() {
-  return <a href="#top" className="brand"><span className="brand-mark">A</span><span>ABHI <b>AGANCY</b></span></a>
+  return <a href="#top" className="brand"><span className="brand-mark">A</span><span>ABHI <b>AGENCY</b></span></a>
 }
 
 export default function Home() {
@@ -396,7 +396,7 @@ export default function Home() {
 
       <section className="manifesto">
         <div className="manifesto-inner">
-          <small>ABHI AGANCY</small>
+          <small>ABHI AGENCY</small>
           <h2>{t.longTitle}<br/><span>{t.longSub}</span></h2>
           <a href="#apply" className="button gold">{t.applyTitle}<ArrowRight size={17}/></a>
         </div>
@@ -452,7 +452,7 @@ export default function Home() {
         <div><Logo/><p>{t.footer}</p></div>
         <div className="footer-links"><a href="/privacy">Privacy Policy</a><a href="/terms">Terms & Conditions</a><a href="/admin">Admin</a></div>
         <div className="footer-socials">{socialLinks.map(([name,url,Icon])=><a key={name as string} href={url as string} target="_blank" rel="noreferrer"><Icon size={17}/>{name as string}</a>)}</div>
-        <small>© {new Date().getFullYear()} ABHI AGANCY. 18+ only.</small>
+        <small>© {new Date().getFullYear()} ABHI AGENCY. 18+ only.</small>
       </footer>
 
       {socialLinks.length>0 && <div className="floating-socials">{socialLinks.slice(0,2).map(([name,url,Icon])=><a aria-label={name as string} key={name as string} href={url as string} target="_blank" rel="noreferrer"><Icon/></a>)}</div>}

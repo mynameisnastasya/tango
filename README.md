@@ -72,7 +72,9 @@ The Tango Agency Code is:
 KCu4ZY
 ```
 
-This code is **not entered into the website**. A broadcaster enters it inside Tango when connecting their Tango broadcaster account to ABHI AGENCY. A detailed step-by-step Tango instruction can be added to the website later.
+Broadcasters can connect through the Tango referral link: https://tango.onelink.me/RCIH/cdw49a6s
+
+If the Tango account is brand-new (under 5 hours old), the broadcaster can alternatively enter `KCu4ZY` manually inside Tango. The code is not entered on the website. A detailed step-by-step Tango instruction can be added later.
 
 Website recruiter/referral codes are a separate feature for campaign attribution and should use different codes.
 

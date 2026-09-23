@@ -20,7 +20,7 @@ type Settings = {
   faq_ru?: string[][]
 }
 const initialSettings: Settings = {
-  welcome_bonus: '4,000–5,000 coins',
+  welcome_bonus: '$15 joining bonus',
   milestone_title: '100,000 Diamond Milestone',
   milestone_reward: 'Additional broadcaster reward may be available.',
   telegram_url: '',
@@ -37,7 +37,7 @@ const copy = {
     h1a: 'Start Your Live',
     h1b: 'Streaming Journey',
     h1c: 'with ABHIGREEN',
-    sub: 'Join an international agency, receive personal support, onboarding, bonuses and guidance from your first stream to your first withdrawal.',
+    sub: 'Join ABHIGREEN, learn live streaming from zero, get personal support and build your audience with clear monetization guidance.',
     joinNow: 'Join Now',
     learn: 'Learn How It Works',
     realOnly: 'Real broadcasters only',
@@ -47,28 +47,28 @@ const copy = {
     tangoCodeLabel: 'Tango Agency Code',
     copyCode: 'Copy Code',
     copied: 'Copied',
-    journey: 'A clear path from application to first withdrawal',
+    journey: 'A clear path from application to confident live streaming',
     journeySub: 'You do not need to figure everything out alone. Our team guides new broadcasters during onboarding.',
     offer: 'What We Offer',
     offerSub: 'Support that stays useful after your first stream.',
     bonuses: 'Bonuses & Milestones',
     bonusesSub: 'Campaigns are editable and may change. Final conditions are always confirmed by your manager.',
     welcome: 'Welcome Bonus',
-    welcomeText: 'New eligible broadcasters may receive approximately',
+    welcomeText: 'Eligible new creators can receive',
     milestone: 'Milestone',
     bonusNote: 'Bonuses, coin amounts, eligibility requirements and campaigns may change. Final conditions are confirmed individually by the agency manager before participation.',
-    ftrTitle: 'What is FTR?',
-    ftr: 'FTR means First Time Redeemer — a new broadcaster who reaches the required balance and successfully completes their first eligible withdrawal.',
+    growthTitle: 'Growth support',
+    growth: 'We help you improve your profile, live format, audience engagement and monetization strategy as you grow.',
     looking: 'Who We Are Looking For',
     lookingSub: 'Creators who want to communicate, grow and broadcast consistently.',
     warning: 'Prerecorded streams, fake broadcasters, impersonation, or attempts to bypass platform rules are not accepted.',
     longTitle: 'Your manager from day one.',
     longSub: 'Your agency for the long run.',
-    community: 'ABHI Creator Community',
+    community: 'ABHIGREEN Creator Community',
     communitySub: 'Accepted broadcasters get access to onboarding information, training materials, announcements, challenges, contests, bonus news and manager support.',
     telegram: 'Open Telegram',
     faq: 'Frequently Asked Questions',
-    applyTitle: 'Become an ABHI Creator',
+    applyTitle: 'Join ABHIGREEN',
     applySub: 'Tell us a little about yourself. A manager will review your application and contact you.',
     submit: 'Send Application',
     sending: 'Sending...',
@@ -90,7 +90,7 @@ const copy = {
     h1a: 'Начни свой путь',
     h1b: 'в live-стриминге',
     h1c: 'с ABHIGREEN',
-    sub: 'Присоединяйся к международному агентству и получай персональное сопровождение, onboarding, бонусы и помощь от первого эфира до первого вывода.',
+    sub: 'Присоединяйся к ABHIGREEN, учись live-стримингу с нуля, развивай аудиторию и получай понятную поддержку по монетизации.',
     joinNow: 'Присоединиться',
     learn: 'Как это работает',
     realOnly: 'Только реальные стримеры',
@@ -100,28 +100,28 @@ const copy = {
     tangoCodeLabel: 'Код агентства в Tango',
     copyCode: 'Скопировать код',
     copied: 'Скопировано',
-    journey: 'Понятный путь от заявки до первого вывода',
+    journey: 'Понятный путь от заявки до уверенных эфиров',
     journeySub: 'Не нужно разбираться во всём одной. Команда сопровождает новых стримеров во время onboarding.',
     offer: 'Что мы даём',
     offerSub: 'Поддержка, которая не заканчивается после первого эфира.',
     bonuses: 'Бонусы и Milestones',
     bonusesSub: 'Условия кампаний редактируются и могут меняться. Финальные условия всегда подтверждает менеджер.',
     welcome: 'Welcome Bonus',
-    welcomeText: 'Подходящие новые стримеры могут получить примерно',
+    welcomeText: 'Подходящие новые стримеры получают',
     milestone: 'Milestone',
     bonusNote: 'Размеры бонусов, coins, требования и кампании могут меняться. Финальные условия подтверждаются менеджером индивидуально до участия.',
-    ftrTitle: 'Что такое FTR?',
-    ftr: 'FTR = First Time Redeemer — новый стример, который выполнил условия платформы и впервые успешно вывел заработанные средства.',
+    growthTitle: 'Поддержка роста',
+    growth: 'Помогаем улучшать профиль, формат эфиров, общение с аудиторией и стратегию монетизации по мере роста.',
     looking: 'Кого мы ищем',
     lookingSub: 'Девушек, которым комфортно общаться, развиваться и регулярно выходить в эфир.',
     warning: 'Записанные трансляции, фейковые стримеры, выдача себя за другого человека и обход правил платформы не принимаются.',
     longTitle: 'Твой менеджер с первого дня.',
     longSub: 'Твоё агентство на долгий путь.',
-    community: 'ABHI Creator Community',
+    community: 'ABHIGREEN Creator Community',
     communitySub: 'Принятые стримеры получают onboarding-материалы, обучение, объявления агентства, челленджи, конкурсы, новости о бонусах и поддержку менеджеров.',
     telegram: 'Открыть Telegram',
     faq: 'Частые вопросы',
-    applyTitle: 'Стать стримером ABHI',
+    applyTitle: 'Присоединиться к ABHIGREEN',
     applySub: 'Расскажи немного о себе. Менеджер рассмотрит заявку и свяжется с тобой.',
     submit: 'Отправить заявку',
     sending: 'Отправляем...',
@@ -142,12 +142,12 @@ const steps = {
   en: [
     ['01','Submit your application'], ['02','Receive Tango connection instructions and the agency code'],
     ['03','Create or connect your broadcaster account'], ['04','Complete onboarding and start streaming'],
-    ['05','Earn coins / diamonds and make your first withdrawal'],
+    ['05','Grow your audience and monetize your live content'],
   ],
   ru: [
     ['01','Отправь заявку'], ['02','Получи инструкцию для подключения в Tango и код агентства'],
     ['03','Создай или подключи broadcaster account'], ['04','Пройди onboarding и начни эфиры'],
-    ['05','Зарабатывай coins / diamonds и сделай первый вывод'],
+    ['05','Развивай аудиторию и монетизируй live-контент'],
   ],
 }
 
@@ -156,14 +156,14 @@ const benefits = {
     ['Personal onboarding', HeartHandshake], ['Russian & English support', Languages],
     ['Platform rules explained', ShieldCheck], ['Streaming tips', Sparkles],
     ['Creator community', Users], ['Performance bonuses', CircleDollarSign],
-    ['Events, challenges & battles', Zap], ['Help reaching FTR', Target],
+    ['Events, challenges & battles', Zap], ['Growth & monetization support', Target],
     ['Long-term support', Crown],
   ],
   ru: [
     ['Персональный onboarding', HeartHandshake], ['Поддержка RU / EN', Languages],
     ['Помощь с правилами платформ', ShieldCheck], ['Советы по эфирам', Sparkles],
     ['Creator community', Users], ['Performance-бонусы', CircleDollarSign],
-    ['Ивенты, челленджи и батлы', Zap], ['Помощь с достижением FTR', Target],
+    ['Ивенты, челленджи и батлы', Zap], ['Поддержка роста и монетизации', Target],
     ['Долгосрочная поддержка', Crown],
   ],
 }
@@ -179,8 +179,6 @@ const faqs = {
     ['Do I need previous experience?', 'No. Beginners can apply and receive onboarding support.'],
     ['Can beginners join?', 'Yes, if you are 18+ and willing to learn and follow platform rules.'],
     ['What is the Tango Agency Code?', 'KCu4ZY is the ABHIGREEN code used inside Tango when connecting your broadcaster account to our agency. Detailed step-by-step instructions will be added separately.'],
-    ['What is FTR?', 'First Time Redeemer: your first successful eligible withdrawal after reaching the required platform balance.'],
-    ['When can I withdraw earnings?', 'Withdrawal timing depends on the platform rules, balance requirements and your account eligibility.'],
     ['Are bonuses guaranteed?', 'No. Bonuses and campaigns can change and are confirmed by your manager before participation.'],
     ['Which countries can join?', 'We work internationally. Eligibility can depend on the current platform and campaign.'],
     ['Can I work with other agencies?', 'This depends on the platform and your existing agency agreement. Ask your manager before joining another agency.'],
@@ -193,8 +191,6 @@ const faqs = {
     ['Нужен ли опыт?', 'Нет. Новички могут подать заявку и пройти onboarding.'],
     ['Можно ли новичкам?', 'Да, если тебе 18+ и ты готова учиться и соблюдать правила платформы.'],
     ['Что такое Tango Agency Code?', 'KCu4ZY — код ABHIGREEN, который вводится внутри Tango при подключении аккаунта стримера к нашему агентству. Пошаговую инструкцию мы добавим отдельно.'],
-    ['Что такое FTR?', 'First Time Redeemer — первый успешный вывод после достижения необходимого баланса и выполнения условий платформы.'],
-    ['Когда можно вывести деньги?', 'Сроки зависят от правил платформы, минимального баланса и eligibility аккаунта.'],
     ['Бонусы гарантированы?', 'Нет. Условия и кампании могут меняться и подтверждаются менеджером до участия.'],
     ['Из каких стран можно?', 'Мы работаем международно. Eligibility зависит от текущей платформы и кампании.'],
     ['Можно работать с другими агентствами?', 'Это зависит от правил платформы и твоих действующих агентских условий. Лучше уточнить у менеджера.'],
@@ -332,9 +328,9 @@ export default function Home() {
           </div>
           <div className="tango-code-box">
             <a className="button gold tango-copy" href="https://tango.onelink.me/RCIH/cdw49a6s" target="_blank" rel="noreferrer">
-              Open Tango referral link <ArrowRight size={17}/>
+              {lang==='ru'?'Открыть Tango по реферальной ссылке':'Open Tango referral link'} <ArrowRight size={17}/>
             </a>
-            <p className="tango-code-help">Or, if the Tango account is brand-new (under 5 hours old), enter this code inside Tango:</p>
+            <p className="tango-code-help">{lang==='ru'?'Если аккаунту Tango меньше 5 часов, введи этот код внутри Tango:':'If the Tango account is under 5 hours old, enter this code inside Tango:'}</p>
             <small>{t.tangoCodeLabel}</small>
             <div className="tango-code">KCu4ZY</div>
             <button className="button gold tango-copy" onClick={copyTangoCode}>
@@ -381,7 +377,7 @@ export default function Home() {
           </article>
           <article className="bonus-card ftr-card">
             <span className="bonus-icon"><Target/></span><small>Education</small>
-            <h3>{t.ftrTitle}</h3><p>{t.ftr}</p>
+            <h3>{t.growthTitle}</h3><p>{t.growth}</p>
           </article>
         </div>
         <p className="fine-print">{t.bonusNote}</p>

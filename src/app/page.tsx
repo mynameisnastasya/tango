@@ -43,7 +43,7 @@ const copy = {
     realOnly: 'Real broadcasters only',
     noFake: 'No prerecorded or fake broadcasts',
     tangoCodeTitle: 'Connect to ABHI AGENCY on Tango',
-    tangoCodeSub: 'Use this agency code inside the Tango app when connecting your broadcaster account to ABHI AGENCY. This code is entered in Tango — not on this website.',
+    tangoCodeSub: 'Use the referral link, or if your Tango account is brand-new (under 5 hours old), enter the agency code inside Tango.',
     tangoCodeLabel: 'Tango Agency Code',
     copyCode: 'Copy Code',
     copied: 'Copied',
@@ -96,7 +96,7 @@ const copy = {
     realOnly: 'Только реальные стримеры',
     noFake: 'Без записанных и фейковых трансляций',
     tangoCodeTitle: 'Подключись к ABHI AGENCY в Tango',
-    tangoCodeSub: 'Этот код нужно ввести внутри приложения Tango при подключении своего аккаунта стримера к ABHI AGENCY. На этом сайте вводить его не нужно.',
+    tangoCodeSub: 'Можно перейти по реферальной ссылке. Если аккаунту Tango меньше 5 часов, можно также ввести код агентства вручную внутри Tango.',
     tangoCodeLabel: 'Код агентства в Tango',
     copyCode: 'Скопировать код',
     copied: 'Скопировано',
@@ -331,13 +331,16 @@ export default function Home() {
             <p>{t.tangoCodeSub}</p>
           </div>
           <div className="tango-code-box">
+            <a className="button gold tango-copy" href="https://tango.onelink.me/RCIH/cdw49a6s" target="_blank" rel="noreferrer">
+              Open Tango referral link <ArrowRight size={17}/>
+            </a>
+            <p className="tango-code-help">Or, if the Tango account is brand-new (under 5 hours old), enter this code inside Tango:</p>
             <small>{t.tangoCodeLabel}</small>
             <div className="tango-code">KCu4ZY</div>
             <button className="button gold tango-copy" onClick={copyTangoCode}>
               {copiedCode ? <Check size={17}/> : <Target size={17}/>}
               {copiedCode ? t.copied : t.copyCode}
             </button>
-            <p className="tango-code-help">Tango → connect your broadcaster account → enter <b>KCu4ZY</b></p>
           </div>
         </div>
       </section>

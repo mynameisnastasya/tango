@@ -29,7 +29,7 @@ export async function POST(request: NextRequest) {
     if (!body?.code) return NextResponse.json({ error: 'Code required' }, { status: 400 })
     const payload = {
       code: String(body.code).trim().slice(0, 80),
-      agency_name: 'ABHI AGENCY',
+      agency_name: 'ABHIGREEN',
       recruiter: String(body.recruiter || '').slice(0, 150),
       market: String(body.market || 'International').slice(0, 100),
       onboarding_bonus: String(body.onboarding_bonus || '').slice(0, 300),

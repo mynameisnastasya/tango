@@ -28,4 +28,4 @@ jobs:
           test -s admin.html
           node --check site.js
           grep -q "KCu4ZY" site.js
-          grep -q "ABHI AGENCY" index.html
+          grep -q "ABHIGREEN" index.html

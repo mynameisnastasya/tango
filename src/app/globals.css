@@ -38,3 +38,10 @@ a{color:inherit;text-decoration:none}button,input,textarea{font:inherit}.top-not
 .tango-code-help{margin:18px 0 0!important;font-size:12px!important;color:#827d73!important}
 .tango-code-help b{color:var(--gold2)}
 @media(max-width:760px){.tango-code{font-size:52px}.tango-code-box{padding:28px 18px}}
+
+.platform-join-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:18px 0}
+.join-option{padding:18px;border-radius:20px;border:1px solid rgba(216,183,119,.16);background:rgba(255,255,255,.04)}
+.join-option h3{margin:8px 0 7px;font:600 18px/1.25 Manrope,sans-serif}
+.join-option small{display:block;margin-bottom:7px;font-size:10px;letter-spacing:.12em;text-transform:uppercase;opacity:.7}
+.join-option .tango-code-help{margin:0 0 12px}
+@media(max-width:760px){.platform-join-grid{grid-template-columns:1fr}}

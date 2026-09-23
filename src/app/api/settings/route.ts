@@ -22,6 +22,8 @@ export async function PUT(request: NextRequest) {
       whatsapp_url: String(body.whatsapp_url || '').slice(0, 300),
       instagram_url: String(body.instagram_url || '').slice(0, 300),
       email: String(body.email || '').slice(0, 200),
+      faq_en: Array.isArray(body.faq_en) ? body.faq_en : [],
+      faq_ru: Array.isArray(body.faq_ru) ? body.faq_ru : [],
       updated_at: new Date().toISOString(),
     }
     const res = await supabase('agency_settings?on_conflict=id', {

@@ -1,7 +1,7 @@
 import { NextRequest } from 'next/server'
 
 export const DEFAULT_SETTINGS = {
-  welcome_bonus: '4,000–5,000 coins',
+  welcome_bonus: '$15 joining bonus',
   milestone_title: '100,000 Diamond Milestone',
   milestone_reward: 'Additional broadcaster reward may be available.',
   telegram_url: '',

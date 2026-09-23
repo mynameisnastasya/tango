@@ -42,7 +42,7 @@ create table if not exists public.referral_codes (
 
 create table if not exists public.agency_settings (
   id integer primary key default 1 check (id = 1),
-  welcome_bonus text default '4,000–5,000 coins',
+  welcome_bonus text default '$15 joining bonus',
   milestone_title text default '100,000 Diamond Milestone',
   milestone_reward text default 'Additional broadcaster reward may be available.',
   telegram_url text default '',

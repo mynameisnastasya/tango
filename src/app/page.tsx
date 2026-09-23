@@ -449,7 +449,7 @@ export default function Home() {
 
       <footer className="footer">
         <div><Logo/><p>{t.footer}</p></div>
-        <div className="footer-links"><a href="/privacy">Privacy Policy</a><a href="/terms">Terms & Conditions</a><a href="/admin">Admin</a></div>
+        <div className="footer-links"><a href="/privacy">Privacy Policy</a><a href="/terms">Terms & Conditions</a></div>
         <div className="footer-socials">{socialLinks.map(([name,url,Icon])=><a key={name as string} href={url as string} target="_blank" rel="noreferrer"><Icon size={17}/>{name as string}</a>)}</div>
         <small>© {new Date().getFullYear()} ABHIGREEN. 18+ only.</small>
       </footer>

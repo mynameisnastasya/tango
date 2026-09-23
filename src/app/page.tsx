@@ -43,7 +43,7 @@ const copy = {
     realOnly: 'Real broadcasters only',
     noFake: 'No prerecorded or fake broadcasts',
     tangoCodeTitle: 'Connect to ABHIGREEN on Tango',
-    tangoCodeSub: 'Use the referral link, or if your Tango account is brand-new (under 5 hours old), enter the agency code inside Tango.',
+    tangoCodeSub: 'Android: use the referral link. iPhone: create your account on tango.me, then open Tango → Settings → Join an Agency and enter the agency code within the first 5 hours.',
     tangoCodeLabel: 'Tango Agency Code',
     copyCode: 'Copy Code',
     copied: 'Copied',
@@ -96,7 +96,7 @@ const copy = {
     realOnly: 'Только реальные стримеры',
     noFake: 'Без записанных и фейковых трансляций',
     tangoCodeTitle: 'Подключись к ABHIGREEN в Tango',
-    tangoCodeSub: 'Можно перейти по реферальной ссылке. Если аккаунту Tango меньше 5 часов, можно также ввести код агентства вручную внутри Tango.',
+    tangoCodeSub: 'Android: используй реферальную ссылку. iPhone: создай аккаунт на tango.me, затем открой Tango → Settings → Join an Agency и введи код агентства в первые 5 часов.',
     tangoCodeLabel: 'Код агентства в Tango',
     copyCode: 'Скопировать код',
     copied: 'Скопировано',
@@ -327,10 +327,24 @@ export default function Home() {
             <p>{t.tangoCodeSub}</p>
           </div>
           <div className="tango-code-box">
-            <a className="button gold tango-copy" href="https://tango.onelink.me/RCIH/cdw49a6s" target="_blank" rel="noreferrer">
-              {lang==='ru'?'Открыть Tango по реферальной ссылке':'Open Tango referral link'} <ArrowRight size={17}/>
-            </a>
-            <p className="tango-code-help">{lang==='ru'?'Если аккаунту Tango меньше 5 часов, введи этот код внутри Tango:':'If the Tango account is under 5 hours old, enter this code inside Tango:'}</p>
+            <div className="platform-join-grid">
+              <div className="join-option">
+                <small>ANDROID</small>
+                <h3>{lang==='ru'?'Нажми здесь, чтобы присоединиться':'Click here to join now'}</h3>
+                <p className="tango-code-help">{lang==='ru'?'Реферальная ссылка работает для Android.':'The referral link is for Android.'}</p>
+                <a className="button gold tango-copy" href="https://tango.onelink.me/RCIH/cdw49a6s" target="_blank" rel="noreferrer">
+                  {lang==='ru'?'Открыть реферальную ссылку':'Open referral link'} <ArrowRight size={17}/>
+                </a>
+              </div>
+              <div className="join-option">
+                <small>IPHONE / IOS</small>
+                <h3>{lang==='ru'?'Создай аккаунт через tango.me':'Create your account on tango.me'}</h3>
+                <p className="tango-code-help">{lang==='ru'?'После регистрации открой Tango → Settings → Join an Agency и введи код ниже. Для нового аккаунта — в первые 5 часов.':'After signup open Tango → Settings → Join an Agency and enter the code below. For a new account, do this within the first 5 hours.'}</p>
+                <a className="button gold tango-copy" href="https://www.tango.me/" target="_blank" rel="noreferrer">
+                  {lang==='ru'?'Открыть tango.me':'Open tango.me'} <ArrowRight size={17}/>
+                </a>
+              </div>
+            </div>
             <small>{t.tangoCodeLabel}</small>
             <div className="tango-code">KCu4ZY</div>
             <button className="button gold tango-copy" onClick={copyTangoCode}>

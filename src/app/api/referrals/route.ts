@@ -1,23 +1,12 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { isAdmin, isConfigured, supabase } from '@/lib/server'
 
-const DEFAULT_CODE = {
-  code: 'KCu4ZY',
-  agency_name: 'ABHI AGANCY',
-  recruiter: 'ABHI AGANCY Manager',
-  market: 'International',
-  onboarding_bonus: 'Current onboarding bonus confirmed by manager',
-  active: true,
-}
-
 export async function GET(request: NextRequest) {
   const code = request.nextUrl.searchParams.get('code')
 
   if (code) {
     if (!isConfigured()) {
-      return code.toLowerCase() === DEFAULT_CODE.code.toLowerCase()
-        ? NextResponse.json(DEFAULT_CODE)
-        : NextResponse.json({ error: 'Referral code not found' }, { status: 404 })
+      return NextResponse.json({ error: 'Referral code not found' }, { status: 404 })
     }
     const res = await supabase(`referral_codes?select=*&code=eq.${encodeURIComponent(code)}&active=eq.true&limit=1`)
     if (!res.ok) return NextResponse.json({ error: await res.text() }, { status: 500 })
@@ -27,7 +16,7 @@ export async function GET(request: NextRequest) {
   }
 
   if (!isAdmin(request)) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
-  if (!isConfigured()) return NextResponse.json([DEFAULT_CODE])
+  if (!isConfigured()) return NextResponse.json([])
   const res = await supabase('referral_codes?select=*&order=created_at.desc')
   if (!res.ok) return NextResponse.json({ error: await res.text() }, { status: 500 })
   return NextResponse.json(await res.json())

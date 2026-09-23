@@ -16,6 +16,8 @@ type Settings = {
   whatsapp_url: string
   instagram_url: string
   email: string
+  faq_en?: string[][]
+  faq_ru?: string[][]
 }
 type Referral = {
   code: string
@@ -232,6 +234,8 @@ export default function Home() {
   const [sending, setSending] = useState(false)
   const [sent, setSent] = useState(false)
   const t = copy[lang]
+  const configuredFaq = lang === 'en' ? settings.faq_en : settings.faq_ru
+  const faqItems = Array.isArray(configuredFaq) && configuredFaq.length ? configuredFaq : faqs[lang]
 
   useEffect(() => {
     fetch('/api/settings').then(r => r.ok ? r.json() : null).then(x => x && setSettings(x)).catch(() => {})
@@ -296,6 +300,7 @@ export default function Home() {
     ['Telegram', settings.telegram_url, MessageCircle],
     ['WhatsApp', settings.whatsapp_url, MessageCircle],
     ['Instagram', settings.instagram_url, Instagram],
+    ['Email', settings.email ? 'mailto:' + settings.email : '', MessageCircle],
   ].filter((x) => Boolean(x[1])), [settings])
 
   return (
@@ -448,7 +453,7 @@ export default function Home() {
       <section className="section faq-section" id="faq">
         <div className="section-head"><div><span className="section-number">05</span><h2>{t.faq}</h2></div></div>
         <div className="faq-list">
-          {faqs[lang].map(([q,a],i)=><div className={'faq-item '+(openFaq===i?'open':'')} key={q}>
+          {faqItems.map(([q,a],i)=><div className={'faq-item '+(openFaq===i?'open':'')} key={q}>
             <button onClick={()=>setOpenFaq(openFaq===i?null:i)}><span>{q}</span><ChevronDown/></button>
             <div className="faq-answer"><p>{a}</p></div>
           </div>)}

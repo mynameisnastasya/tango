@@ -74,18 +74,17 @@
     </section>
 
     <section class="section compact">
-      <div class="referral-card">
+      <div class="referral-card tango-code-card">
         <div>
-          <div class="eyebrow gold-text">REFERRAL SYSTEM</div>
-          <h2 data-i18n="refTitle">Have a Referral Code?</h2>
-          <p data-i18n="refSub">Enter your agency or recruiter code. We will connect your application to the right manager.</p>
+          <div class="eyebrow gold-text">TANGO • AGENCY CONNECTION</div>
+          <h2 data-i18n="tangoCodeTitle">Connect to ABHI AGANCY on Tango</h2>
+          <p data-i18n="tangoCodeSub">Use this agency code inside the Tango app when connecting your broadcaster account to ABHI AGANCY. This code is entered in Tango — not on this website.</p>
         </div>
-        <div>
-          <div class="ref-input">
-            <input id="referralInput" placeholder="Enter your referral / agency code">
-            <button id="applyReferral" data-i18n="applyCode">Apply Code</button>
-          </div>
-          <div id="referralResult"></div>
+        <div class="tango-code-box">
+          <small data-i18n="tangoCodeLabel">Tango Agency Code</small>
+          <div class="tango-code">KCu4ZY</div>
+          <button id="copyTangoCode" class="button gold tango-copy" type="button" data-i18n="copyCode">Copy Code</button>
+          <p class="tango-code-help">Tango → connect your broadcaster account → enter <b>KCu4ZY</b></p>
         </div>
       </div>
     </section>
@@ -97,7 +96,7 @@
       </div>
       <div class="steps">
         <article><span>01</span><h3 data-i18n="step1">Submit your application</h3></article>
-        <article><span>02</span><h3 data-i18n="step2">Receive your agency invitation / referral code</h3></article>
+        <article><span>02</span><h3 data-i18n="step2">Receive Tango connection instructions and the agency code</h3></article>
         <article><span>03</span><h3 data-i18n="step3">Create or connect your broadcaster account</h3></article>
         <article><span>04</span><h3 data-i18n="step4">Complete onboarding and start streaming</h3></article>
         <article><span>05</span><h3 data-i18n="step5">Earn coins / diamonds and make your first withdrawal</h3></article>
@@ -199,7 +198,6 @@
             <label><span data-i18n="platform">Current streaming platform</span><input name="platform" placeholder="Tango, SuperLive, Bigo..."></label>
             <label><span data-i18n="username">Current platform username</span><input name="username"></label>
             <label class="full"><span data-i18n="experience">Previous live-streaming experience</span><textarea name="experience" rows="3"></textarea></label>
-            <label>Referral code<input id="formReferral" name="referral_code"></label>
             <label><span data-i18n="hours">How many hours per week can you stream?</span><input name="hours_per_week"></label>
             <label class="full"><span data-i18n="message">Short message / introduction</span><textarea name="message" rows="4"></textarea></label>
           </div>

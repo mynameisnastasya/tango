@@ -1,105 +1,81 @@
 const translations={
-en:{
-navHow:'How It Works',navBenefits:'Benefits',navBonuses:'Bonuses',navApply:'Apply',joinAgency:'Join the Agency',
-hero1:'Start Your Live',hero2:'Streaming Journey',hero3:'with ABHI AGANCY',heroSub:'Join an international agency, receive personal support, onboarding, bonuses and guidance from your first stream to your first withdrawal.',joinNow:'Join Now',learnHow:'Learn How It Works',realOnly:'Real broadcasters only',noFake:'No prerecorded or fake broadcasts',
-tangoCodeTitle:'Connect to ABHI AGANCY on Tango',tangoCodeSub:'Use this agency code inside the Tango app when connecting your broadcaster account to ABHI AGANCY. This code is entered in Tango — not on this website.',tangoCodeLabel:'Tango Agency Code',copyCode:'Copy Code',copied:'Copied',
-journeyTitle:'A clear path from application to first withdrawal',journeySub:'You do not need to figure everything out alone. Our team guides new broadcasters during onboarding.',
-step1:'Submit your application',step2:'Receive Tango connection instructions and the agency code',step3:'Create or connect your broadcaster account',step4:'Complete onboarding and start streaming',step5:'Earn coins / diamonds and make your first withdrawal',
-offerTitle:'What We Offer',offerSub:'Support that stays useful after your first stream.',b1:'Personal onboarding',b2:'Russian & English support',b3:'Help understanding platform rules',b4:'Streaming tips and recommendations',b5:'Creator community',b6:'Performance bonuses',b7:'Events, challenges & battles',b8:'Help reaching the first withdrawal / FTR',b9:'Long-term support',
-bonusTitle:'Bonuses & Milestones',bonusSub:'Campaigns may change. Final conditions are confirmed individually by your manager.',welcomeText:'New eligible broadcasters may receive approximately 4,000–5,000 coins during initial onboarding, depending on current agency conditions.',milestoneText:'When an eligible broadcaster reaches 100,000 diamonds, an additional broadcaster reward may be available.',ftrTitle:'What is FTR?',ftrText:'FTR means First Time Redeemer — a new broadcaster who reaches the required balance and successfully completes their first eligible withdrawal.',bonusNote:'Bonuses, coin amounts, eligibility requirements and campaigns may change. Final conditions are confirmed individually by the agency manager before participation.',
-managerDay1:'Your manager from day one.',agencyLong:'Your agency for the long run.',becomeCreator:'Become an ABHI Creator',lookingTitle:'Who We Are Looking For',lookingSub:'Creators who want to communicate, grow and broadcast consistently.',c1:'Be 18+',c2:'Be comfortable appearing live on camera',c3:'Use your real identity and content',c4:'Be willing to communicate with viewers',c5:'Follow streaming platform rules',c6:'Be interested in regular live broadcasting',warning:'Prerecorded streams, fake broadcasters, impersonation, or attempts to bypass platform rules are not accepted.',
-applyTitle:'Become an ABHI Creator',applySub:'Tell us a little about yourself. A manager will review your application and contact you.',name:'Name',country:'Country',languages:'Languages',platform:'Current streaming platform',username:'Current platform username',experience:'Previous live-streaming experience',hours:'How many hours per week can you stream?',message:'Short message / introduction',age:'I confirm that I am 18 years or older.',consent:'I agree to the Privacy Policy and Terms.',send:'Send Application'
-},
 ru:{
-navHow:'Как это работает',navBenefits:'Преимущества',navBonuses:'Бонусы',navApply:'Заявка',joinAgency:'Вступить в агентство',
-hero1:'Начни свой путь',hero2:'в live-стриминге',hero3:'с ABHI AGANCY',heroSub:'Присоединяйся к международному агентству и получай персональное сопровождение, onboarding, бонусы и помощь от первого эфира до первого вывода.',joinNow:'Присоединиться',learnHow:'Как это работает',realOnly:'Только реальные стримеры',noFake:'Без записанных и фейковых трансляций',
-tangoCodeTitle:'Подключись к ABHI AGANCY в Tango',tangoCodeSub:'Этот код нужно ввести внутри приложения Tango при подключении своего аккаунта стримера к ABHI AGANCY. На этом сайте вводить его не нужно.',tangoCodeLabel:'Код агентства в Tango',copyCode:'Скопировать код',copied:'Скопировано',
-journeyTitle:'Понятный путь от заявки до первого вывода',journeySub:'Не нужно разбираться во всём одной. Команда сопровождает новых стримеров во время onboarding.',
-step1:'Отправь заявку',step2:'Получи инструкцию для подключения в Tango и код агентства',step3:'Создай или подключи broadcaster account',step4:'Пройди onboarding и начни эфиры',step5:'Зарабатывай coins / diamonds и сделай первый вывод',
-offerTitle:'Что мы даём',offerSub:'Поддержка, которая не заканчивается после первого эфира.',b1:'Персональный onboarding',b2:'Поддержка RU / EN',b3:'Помощь с правилами платформ',b4:'Советы по трансляциям',b5:'Creator community',b6:'Performance-бонусы',b7:'Ивенты, челленджи и батлы',b8:'Помощь с достижением FTR',b9:'Долгосрочная поддержка',
-bonusTitle:'Бонусы и Milestones',bonusSub:'Условия кампаний могут меняться. Финальные условия подтверждает менеджер.',welcomeText:'Подходящие новые стримеры могут получить примерно 4 000–5 000 coins во время начального onboarding в зависимости от текущих условий агентства.',milestoneText:'При достижении 100 000 diamonds подходящему стримеру может быть доступен дополнительный бонус.',ftrTitle:'Что такое FTR?',ftrText:'FTR = First Time Redeemer — новый стример, который выполнил условия платформы и впервые успешно вывел заработанные средства.',bonusNote:'Размеры бонусов, coins, требования и кампании могут меняться. Финальные условия подтверждаются менеджером индивидуально до участия.',
-managerDay1:'Твой менеджер с первого дня.',agencyLong:'Твоё агентство на долгий путь.',becomeCreator:'Стать стримером ABHI',lookingTitle:'Кого мы ищем',lookingSub:'Девушек, которым комфортно общаться, развиваться и регулярно выходить в эфир.',c1:'Быть 18+',c2:'Комфортно чувствовать себя в кадре',c3:'Использовать свою реальную личность и контент',c4:'Быть готовой общаться со зрителями',c5:'Соблюдать правила платформы',c6:'Быть заинтересованной в регулярных эфирах',warning:'Записанные трансляции, фейковые стримеры, выдача себя за другого человека и обход правил платформы не принимаются.',
-applyTitle:'Стать стримером ABHI',applySub:'Расскажи немного о себе. Менеджер рассмотрит заявку и свяжется с тобой.',name:'Имя',country:'Страна',languages:'Языки',platform:'Текущая стриминг-платформа',username:'Ник на платформе',experience:'Опыт live-стриминга',hours:'Сколько часов в неделю можешь стримить?',message:'Коротко о себе',age:'Мне 18 лет или больше.',consent:'Я соглашаюсь с Privacy Policy и Terms.',send:'Отправить заявку'
-}
-};
+navEarn:'Как зарабатывать',navSupport:'Что мы даём',navStart:'Как начать',navApply:'Хочу в агентство',
+heroTitle:'Начни <em>зарабатывать онлайн</em> на live-стримах',heroLead:'Общайся с людьми в прямом эфире, развивай свою аудиторию и получай доход от контента. Даже если ты никогда раньше не стримила — ABHI AGANCY поможет начать с нуля.',heroCta:'Хочу попробовать',heroSecond:'Как устроен заработок?',
+trust1a:'Без опыта',trust1b:'обучим с нуля',trust2a:'Гибкий формат',trust2b:'стримишь удалённо',trust3a:'Личный менеджер',trust3b:'не остаёшься одна',
+visualToday:'Сегодня',visualEarn:'Монетизация',visualEarn2:'Подарки → diamonds',visualManager:'Менеджер рядом',
+quick1a:'Можно начать с телефона',quick1b:'без сложной техники',quick2a:'Работай удалённо',quick2b:'из удобного тебе места',quick3a:'Не нужно быть блогером',quick3b:'важнее общение и регулярность',quick4a:'Поддержка агентства',quick4b:'от профиля до роста аудитории',
+introTitle:'Это не «сидеть в интернете».<br><em>Это работа с аудиторией.</em>',introText:'Ты выходишь в эфир, общаешься, знакомишься с людьми, создаёшь настроение и постепенно собираешь вокруг себя постоянных зрителей. Чем сильнее твоя аудитория и активнее эфиры — тем больше возможностей для монетизации.',introNote:'Доход не гарантирован: он зависит от активности, аудитории, формата контента, региона и актуальных правил Tango.',
+earnTitle:'Откуда вообще берётся <em>заработок?</em>',earnSub:'На Tango есть несколько способов монетизировать активность и внимание аудитории. Мы помогаем понять, как использовать их грамотно.',
+money1t:'Подарки во время эфиров',money1p:'Зрители отправляют виртуальные подарки. Они превращаются в diamonds на аккаунте стримера, которые по правилам Tango можно конвертировать в реальные деньги.',money2t:'Лояльная аудитория',money2p:'Постоянные зрители возвращаются на эфиры, участвуют в общении и поддерживают любимых creators. Мы учим не просто «сидеть в кадре», а строить комьюнити.',money3t:'Батлы и активности',money3p:'Батлы, цели и события делают эфир динамичнее и могут давать дополнительные возможности для diamonds и бонусов по текущим условиям платформы.',money4t:'Платный контент',money4p:'Tango развивает paid posts и другие форматы, поэтому профиль может работать на монетизацию не только в момент прямого эфира.',moneySummary:'<b>Главное:</b> тебе не нужно приходить с огромной аудиторией. Нужны желание общаться, регулярность и готовность учиться — всё остальное мы разберём вместе.',
+supportTitle:'Ты не просто получаешь код.<br><em>Ты получаешь команду.</em>',supportLead:'Наша задача — сократить путь новичка от «я вообще не понимаю, что делать» до уверенных, регулярных эфиров.',s1t:'Настройка профиля',s1p:'Поможем с оформлением, позиционированием и первым впечатлением для зрителей.',s2t:'Подготовка к первым эфирам',s2p:'Разберём свет, кадр, темы, формат общения и как не зависнуть в тишине.',s3t:'Обучение монетизации',s3p:'Объясним механику подарков, активности зрителей и способы развивать постоянную аудиторию.',s4t:'Контент и идеи',s4p:'Подскажем темы, форматы, цели и активности, чтобы эфиры не превращались в одно и то же.',s5t:'Правила Tango',s5p:'Поможем понять, что можно и нельзя, чтобы работать безопасно и не рисковать аккаунтом.',s6t:'Личный менеджер',s6p:'Можно задавать вопросы, разбирать сложные ситуации и корректировать стратегию по мере роста.',
+codeTitle:'Когда будешь подключать аккаунт к ABHI AGANCY в Tango — понадобится этот код',codeText:'Не вводи его на этом сайте. Код используется внутри Tango при подключении аккаунта к агентству. Пошаговую инструкцию мы добавим отдельно и менеджер поможет пройти подключение.',codeLabel:'TANGO AGENCY CODE',copyCode:'Скопировать код',copied:'Скопировано ✓',
+fitTitle:'Подойдёт, если ты хочешь <em>новый онлайн-формат работы</em>',fit1:'Тебе 18 лет или больше',fit2:'Тебе комфортно общаться с людьми',fit3:'Готова появляться в кадре и быть собой',fit4:'Хочешь гибкий удалённый формат',fit5:'Готова выходить в эфир регулярно',fit6:'Хочешь учиться и развивать аудиторию',rulesNote:'Мы работаем только с реальными стримерами. Записанные трансляции, фейковые аккаунты, impersonation и обход правил платформы не принимаются.',
+faqTitle:'Вопросы перед стартом',applyTitle:'Хочешь попробовать?<br><em>Напиши нам.</em>',applyLead:'Оставь короткую заявку. Мы посмотрим, подойдёт ли тебе формат, ответим на вопросы и объясним следующие шаги без давления.',remote:'Удалённо',fName:'Как тебя зовут?',fCountry:'Страна',fExperience:'Есть опыт стримов?',fTango:'Если уже есть Tango — username',fHours:'Сколько времени в неделю готова уделять?',fMessage:'Расскажи пару слов о себе',age:'Мне 18 лет или больше.',consent:'Я согласна с Privacy Policy и Terms.',send:'Отправить заявку',footerText:'Помогаем девушкам 18+ уверенно начать и развиваться в live-стриминге.'
+},
+en:{
+navEarn:'How you earn',navSupport:'Our support',navStart:'How to start',navApply:'Join the agency',
+heroTitle:'Start <em>earning online</em> with live streaming',heroLead:'Meet people live, grow an audience and monetize your content. Even if you have never streamed before, ABHI AGANCY helps you start from zero.',heroCta:'I want to try',heroSecond:'How does earning work?',
+trust1a:'No experience needed',trust1b:'we teach beginners',trust2a:'Flexible format',trust2b:'stream remotely',trust3a:'Personal manager',trust3b:'support when you need it',
+visualToday:'Today',visualEarn:'Monetization',visualEarn2:'Gifts → diamonds',visualManager:'Manager by your side',
+quick1a:'Start with your phone',quick1b:'no complex setup',quick2a:'Work remotely',quick2b:'from a place that suits you',quick3a:'No influencer status needed',quick3b:'conversation matters more',quick4a:'Agency support',quick4b:'from profile to audience growth',
+introTitle:'It is more than being online.<br><em>It is building an audience.</em>',introText:'You go live, talk, meet people, create a good atmosphere and gradually build a group of regular viewers. The stronger your audience and the more consistent your streams, the more monetization opportunities you can create.',introNote:'Earnings are not guaranteed and depend on creator activity, audience engagement, content, region and current Tango rules.',
+earnTitle:'So where can <em>earnings</em> come from?',earnSub:'Tango offers several ways to monetize attention and engagement. We help you understand how to use them well.',
+money1t:'Gifts during live streams',money1p:'Viewers send virtual gifts. They become diamonds in the creator account, which can be redeemed for real money under Tango’s current rules.',money2t:'A loyal audience',money2p:'Regular viewers return, participate and support creators they enjoy. We teach you to build a community instead of simply sitting on camera.',money3t:'Battles & activities',money3p:'Battles, goals and events make streams more dynamic and may create additional diamond and bonus opportunities under current platform conditions.',money4t:'Paid content',money4p:'Tango is expanding paid posts and other formats, so your profile can have monetization opportunities outside the exact moment you are live.',moneySummary:'<b>The key point:</b> you do not need to arrive with a huge audience. Bring your willingness to communicate, consistency and readiness to learn — we help with the rest.',
+supportTitle:'You do not just get a code.<br><em>You get a team.</em>',supportLead:'Our job is to shorten the path from “I have no idea what to do” to confident, consistent live streams.',s1t:'Profile setup',s1p:'We help with positioning, presentation and the first impression viewers get.',s2t:'First-stream preparation',s2p:'We cover lighting, framing, topics, conversation flow and how to avoid awkward silence.',s3t:'Monetization coaching',s3p:'We explain gifts, viewer activity and ways to build a returning audience.',s4t:'Content ideas',s4p:'Get ideas for topics, formats, goals and activities so streams stay fresh.',s5t:'Tango rules',s5p:'We help you understand what is allowed so you can stream safely and protect your account.',s6t:'Personal manager',s6p:'Ask questions, discuss difficult situations and adjust your approach as you grow.',
+codeTitle:'When you connect your account to ABHI AGANCY inside Tango, you will need this code',codeText:'Do not enter it on this website. The code is used inside Tango when connecting your broadcaster account to the agency. We will add a step-by-step guide later and your manager can help you connect.',codeLabel:'TANGO AGENCY CODE',copyCode:'Copy code',copied:'Copied ✓',
+fitTitle:'A fit if you want <em>a new remote way to work</em>',fit1:'You are 18 or older',fit2:'You enjoy talking to people',fit3:'You are comfortable appearing on camera as yourself',fit4:'You want a flexible remote format',fit5:'You can stream consistently',fit6:'You want to learn and grow an audience',rulesNote:'We work with real broadcasters only. Prerecorded streams, fake accounts, impersonation and attempts to bypass platform rules are not accepted.',
+faqTitle:'Questions before you start',applyTitle:'Want to try?<br><em>Talk to us.</em>',applyLead:'Send a short application. We will help you understand whether the format fits you, answer your questions and explain next steps without pressure.',remote:'Remote',fName:'Your name',fCountry:'Country',fExperience:'Any streaming experience?',fTango:'If you already use Tango — username',fHours:'How much time can you stream each week?',fMessage:'Tell us a little about yourself',age:'I am 18 or older.',consent:'I agree to the Privacy Policy and Terms.',send:'Send application',footerText:'Helping women 18+ start and grow confidently in live streaming.'
+}};
 const faqs={
-en:[
-['Is joining the agency free?','Yes. ABHI AGANCY does not charge an application or joining fee. Platform and campaign rules may differ.'],
-['Do I need previous experience?','No. Beginners can apply and receive onboarding support.'],
-['Can beginners join?','Yes, if you are 18+ and willing to learn and follow platform rules.'],
-['What is the Tango Agency Code?','KCu4ZY is the ABHI AGANCY code used inside Tango when connecting your broadcaster account to our agency. Detailed step-by-step instructions will be added separately.'],
-['What is FTR?','First Time Redeemer: your first successful eligible withdrawal after reaching the required platform balance.'],
-['When can I withdraw earnings?','Withdrawal timing depends on platform rules, balance requirements and account eligibility.'],
-['Are bonuses guaranteed?','No. Bonuses and campaigns can change and are confirmed by your manager before participation.'],
-['Which countries can join?','We work internationally. Eligibility can depend on the current platform and campaign.'],
-['Can I work with other agencies?','This depends on platform rules and your existing agency agreement.'],
-['What if my account belongs to another agency?','Tell us before onboarding so we can explain the available options.'],
-['Do I need to stream every day?','Not necessarily. Consistency matters, but schedule depends on your goals and platform conditions.'],
-['Are prerecorded streams allowed?','No. ABHI AGANCY accepts real live broadcasters only.']
-],
 ru:[
-['Вступление в агентство бесплатное?','Да. ABHI AGANCY не берёт плату за заявку или вступление.'],
-['Нужен ли опыт?','Нет. Новички могут подать заявку и пройти onboarding.'],
-['Можно ли новичкам?','Да, если тебе 18+ и ты готова учиться и соблюдать правила платформы.'],
-['Что такое Tango Agency Code?','KCu4ZY — код ABHI AGANCY, который вводится внутри Tango при подключении аккаунта стримера к нашему агентству. Пошаговую инструкцию мы добавим отдельно.'],
-['Что такое FTR?','First Time Redeemer — первый успешный вывод после достижения необходимого баланса.'],
-['Когда можно вывести деньги?','Сроки зависят от правил платформы, минимального баланса и eligibility аккаунта.'],
-['Бонусы гарантированы?','Нет. Условия и кампании могут меняться и подтверждаются менеджером до участия.'],
-['Из каких стран можно?','Мы работаем международно. Eligibility зависит от текущей платформы и кампании.'],
-['Можно работать с другими агентствами?','Это зависит от правил платформы и действующих агентских условий.'],
-['Что если аккаунт уже в другом агентстве?','Скажи об этом до onboarding — мы объясним доступные варианты.'],
-['Нужно стримить каждый день?','Не обязательно. Важна регулярность, а график зависит от целей и платформы.'],
-['Записанные эфиры разрешены?','Нет. ABHI AGANCY принимает только реальных live-стримеров.']
+['Мне обязательно уже быть блогером?','Нет. Для старта важнее уметь или хотеть общаться, быть естественной в кадре и регулярно выходить в эфир. Мы поможем с оформлением, темами и первыми шагами.'],
+['Как именно зарабатывает стример?','Один из основных механизмов Tango — виртуальные подарки от зрителей. Они превращаются в diamonds на аккаунте creator. Также платформа развивает платный контент, батлы и другие активности.'],
+['Сколько я смогу зарабатывать?','Фиксированной суммы нет и обещать её было бы неправильно. Результат зависит от времени в эфире, качества общения, постоянной аудитории, активности и правил платформы. Наша задача — помочь тебе быстрее разобраться и не терять время на типичных ошибках.'],
+['Нужно ли платить ABHI AGANCY за вступление?','За подачу заявки и вступление на сайте мы не берём оплату. Если появятся отдельные условия конкретной кампании, менеджер объяснит их заранее.'],
+['Что мне понадобится для старта?','Смартфон, стабильный интернет, аккуратный кадр, желание общаться и время на регулярные эфиры. С остальной подготовкой поможем.'],
+['Можно ли совмещать со своей работой или учёбой?','Формат стриминга гибкий, поэтому многие выстраивают расписание под свою жизнь. Но для роста важна регулярность.'],
+['Что такое KCu4ZY?','Это код ABHI AGANCY для подключения аккаунта именно внутри Tango. На сайте его вводить не нужно. Инструкцию по подключению мы добавим отдельно.'],
+['Если у меня уже есть аккаунт Tango?','Укажи username в заявке и обязательно сообщи менеджеру, если аккаунт уже связан с другим агентством. Дальнейшие шаги зависят от правил платформы.'],
+['Вы помогаете с идеями для эфиров?','Да. Мы можем разбирать темы, подачу, общение со зрителями, цели эфира и способы сделать контент живее.'],
+['Есть ли правила по контенту?','Да. Tango устанавливает правила для live-контента, и их нужно соблюдать. Мы помогаем новичкам понять основные требования до старта.']
+],
+en:[
+['Do I already need to be an influencer?','No. For beginners, being willing to communicate, appearing naturally on camera and streaming consistently matters more. We help with profile setup, topics and first steps.'],
+['How does a streamer earn?','One of Tango’s core mechanisms is virtual gifts from viewers, which become diamonds in the creator account. Tango also supports paid content, battles and other monetization activities.'],
+['How much can I earn?','There is no fixed amount and it would be misleading to promise one. Results depend on live hours, audience engagement, consistency, content and platform rules. Our role is to help you learn faster and avoid common beginner mistakes.'],
+['Is there a fee to join ABHI AGANCY?','We do not charge a website application or joining fee. If a specific campaign ever has separate conditions, your manager will explain them in advance.'],
+['What do I need to start?','A smartphone, stable internet, a clean camera setup, willingness to communicate and time for consistent streams. We help with the rest of the preparation.'],
+['Can I combine this with work or study?','Live streaming can be flexible, so many creators build a schedule around their life. Consistency still matters for growth.'],
+['What is KCu4ZY?','It is the ABHI AGANCY code used inside Tango to connect a broadcaster account to the agency. You do not enter it on this website.'],
+['What if I already have a Tango account?','Add your username to the application and tell your manager if the account is already linked to another agency. Next steps depend on platform rules.'],
+['Do you help with stream ideas?','Yes. We can work on topics, presentation, viewer conversations, stream goals and ways to make your content more engaging.'],
+['Are there content rules?','Yes. Tango has live broadcasting rules that creators must follow. We help beginners understand the main requirements before they start.']
 ]};
-
-let lang=localStorage.getItem('abhi_lang')||'en';
+let lang=localStorage.getItem('abhi_lang')||'ru';
 const langButton=document.getElementById('langButton');
 const menuButton=document.getElementById('menuButton');
 const mobileMenu=document.getElementById('mobileMenu');
-
 function applyLanguage(){
- document.documentElement.lang=lang;
- langButton.textContent=lang.toUpperCase();
- document.querySelectorAll('[data-i18n]').forEach(el=>{const key=el.dataset.i18n;if(translations[lang][key])el.textContent=translations[lang][key]});
- renderFaq();
- localStorage.setItem('abhi_lang',lang);
+ document.documentElement.lang=lang;langButton.textContent=lang.toUpperCase();
+ document.querySelectorAll('[data-i18n]').forEach(el=>{const k=el.dataset.i18n;if(translations[lang][k])el.textContent=translations[lang][k]});
+ document.querySelectorAll('[data-i18n-html]').forEach(el=>{const k=el.dataset.i18nHtml;if(translations[lang][k])el.innerHTML=translations[lang][k]});
+ const summary=document.querySelector('[data-i18n="moneySummary"]');if(summary)summary.innerHTML=translations[lang].moneySummary;
+ renderFaq();localStorage.setItem('abhi_lang',lang);
 }
-langButton.addEventListener('click',()=>{lang=lang==='en'?'ru':'en';applyLanguage()});
+function renderFaq(){
+ const el=document.getElementById('faqList');el.innerHTML=faqs[lang].map((x,i)=>'<div class="faq-item '+(i===0?'open':'')+'"><button class="faq-q"><span>'+x[0]+'</span><span>＋</span></button><div class="faq-a">'+x[1]+'</div></div>').join('');
+ el.querySelectorAll('.faq-q').forEach(b=>b.addEventListener('click',()=>b.parentElement.classList.toggle('open')));
+}
+langButton.addEventListener('click',()=>{lang=lang==='ru'?'en':'ru';applyLanguage()});
 menuButton.addEventListener('click',()=>mobileMenu.classList.toggle('hidden'));
 mobileMenu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>mobileMenu.classList.add('hidden')));
-
-function renderFaq(){
- const list=document.getElementById('faqList');
- list.innerHTML=faqs[lang].map((x,i)=>'<div class="faq-item '+(i===0?'open':'')+'"><button class="faq-q"><span>'+x[0]+'</span><span>⌄</span></button><div class="faq-a">'+x[1]+'</div></div>').join('');
- list.querySelectorAll('.faq-q').forEach(btn=>btn.addEventListener('click',()=>btn.parentElement.classList.toggle('open')));
-}
-
 const copyButton=document.getElementById('copyTangoCode');
-copyButton.addEventListener('click',async()=>{
- const original=translations[lang].copyCode;
- try{
-   await navigator.clipboard.writeText('KCu4ZY');
-   copyButton.textContent=translations[lang].copied+' ✓';
-   setTimeout(()=>copyButton.textContent=original,1600);
- }catch{
-   copyButton.textContent='KCu4ZY';
- }
-});
-
+copyButton.addEventListener('click',async()=>{try{await navigator.clipboard.writeText('KCu4ZY');copyButton.textContent=translations[lang].copied;setTimeout(()=>copyButton.textContent=translations[lang].copyCode,1600)}catch{copyButton.textContent='KCu4ZY'}});
 document.getElementById('applicationForm').addEventListener('submit',e=>{
- e.preventDefault();
- const fd=new FormData(e.currentTarget);
- const app=Object.fromEntries(fd.entries());
- app.id=crypto.randomUUID?crypto.randomUUID():String(Date.now());
- app.created_at=new Date().toISOString();
- app.status='New';
- app.age_confirmed=fd.get('age_confirmed')==='on';
- app.consent=fd.get('consent')==='on';
- app.source=location.href;
- const saved=JSON.parse(localStorage.getItem('abhi_demo_applications')||'[]');
- saved.unshift(app);
- localStorage.setItem('abhi_demo_applications',JSON.stringify(saved));
- document.getElementById('formResult').innerHTML='<div class="form-success">'+(lang==='ru'?'Спасибо! Заявка сохранена. Менеджер свяжется с тобой после подключения общего backend-хранилища.':'Thank you! Your application has been saved. A manager can process it once the shared backend is connected.')+'</div>';
- e.currentTarget.reset();
+ e.preventDefault();const fd=new FormData(e.currentTarget);const app=Object.fromEntries(fd.entries());
+ app.id=crypto.randomUUID?crypto.randomUUID():String(Date.now());app.created_at=new Date().toISOString();app.status='New';app.age_confirmed=fd.get('age_confirmed')==='on';app.consent=fd.get('consent')==='on';app.source=location.href;
+ const saved=JSON.parse(localStorage.getItem('abhi_demo_applications')||'[]');saved.unshift(app);localStorage.setItem('abhi_demo_applications',JSON.stringify(saved));
+ document.getElementById('formResult').innerHTML='<div class="form-success">'+(lang==='ru'?'Спасибо! Заявка сохранена. Мы свяжемся с тобой по указанному контакту.':'Thank you! Your application has been saved. We will contact you using the details you provided.')+'</div>';e.currentTarget.reset();
 });
 applyLanguage();

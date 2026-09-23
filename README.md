@@ -1,13 +1,13 @@
-# ABHI AGENCY
+# ABHIGREEN
 
-Premium bilingual recruiting and onboarding website for **ABHI AGENCY**.
+Premium bilingual recruiting and onboarding website for **ABHIGREEN**.
 
 ## Included
 
 - EN / RU mobile-first homepage
 - Premium black / white / champagne-gold design
 - Prominent Tango Agency Code: `KCu4ZY`
-- Clear copy explaining that `KCu4ZY` is entered inside Tango to connect a broadcaster account to ABHI AGENCY
+- Clear copy explaining that `KCu4ZY` is entered inside Tango to connect a broadcaster account to ABHIGREEN
 - Separate website recruiter/referral-code infrastructure for future campaigns
 - Application form with 18+ confirmation
 - Real-broadcaster / no-prerecorded-stream messaging
@@ -90,6 +90,6 @@ npm run build
 
 ## Notes
 
-ABHI AGENCY does not guarantee earnings, bonuses, withdrawals, viewer counts or creator success. Bonus and campaign conditions can change and should be confirmed individually by an agency manager.
+ABHIGREEN does not guarantee earnings, bonuses, withdrawals, viewer counts or creator success. Bonus and campaign conditions can change and should be confirmed individually by an agency manager.
 
 The public form intentionally does not collect passports or other sensitive identity documents.

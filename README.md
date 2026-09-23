@@ -1,21 +1,21 @@
 # ABHIGREEN
 
-Premium bilingual recruiting and onboarding website for **ABHIGREEN**.
+Bilingual creator recruiting and onboarding website for **ABHIGREEN**.
 
 ## Included
 
 - EN / RU mobile-first homepage
-- Premium black / white / champagne-gold design
+- Bright Tango-inspired pink / magenta / purple design
 - Prominent Tango Agency Code: `KCu4ZY`
 - Clear copy explaining that `KCu4ZY` is entered inside Tango to connect a broadcaster account to ABHIGREEN
 - Separate website recruiter/referral-code infrastructure for future campaigns
 - Application form with 18+ confirmation
 - Real-broadcaster / no-prerecorded-stream messaging
-- Benefits, milestones, FTR explanation, FAQ and creator community
+- Benefits, $15 joining bonus, FAQ and creator community
 - Privacy Policy and Terms & Conditions
 - Admin dashboard at `/admin`
 - Applicant search and filters
-- Applicant statuses: New / Contacted / Approved / Rejected / Active / FTR Completed
+- Applicant statuses for recruitment and creator onboarding
 - CSV export
 - Referral-code management
 - Referral analytics
@@ -59,7 +59,7 @@ The admin dashboard can:
 - change applicant status
 - export CSV
 - create or update referral codes
-- view applications / approved / active / FTR metrics by referral code
+- view application and creator activity metrics by referral code
 - edit bonus and milestone copy
 - edit Telegram / WhatsApp / Instagram / email contacts
 - override EN and RU FAQs
@@ -90,6 +90,6 @@ npm run build
 
 ## Notes
 
-ABHIGREEN does not guarantee earnings, bonuses, withdrawals, viewer counts or creator success. Bonus and campaign conditions can change and should be confirmed individually by an agency manager.
+ABHIGREEN does not guarantee earnings, viewer counts or creator success. The $15 joining bonus is shown for eligible new creators and final campaign conditions should be confirmed by a manager. Bonus and campaign conditions can change and should be confirmed individually by an agency manager.
 
 The public form intentionally does not collect passports or other sensitive identity documents.

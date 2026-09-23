@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://mynameisnastasya.github.io/tango/sitemap.xml

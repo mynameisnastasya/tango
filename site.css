@@ -19,3 +19,12 @@
 .joining-bonus b,.joining-bonus small{display:block}.joining-bonus b{font:700 14px 'Manrope';color:#a71b62}.joining-bonus small{font-size:10px;color:#8e7e8d;margin-top:4px}.joining-bonus-arrow{font-size:20px;color:var(--pink)}
 .connection-bonus{display:flex;gap:12px;align-items:center;margin:18px 0;padding:14px 16px;border-radius:16px;background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.18)}
 .connection-bonus>span{font-size:24px}.connection-bonus b,.connection-bonus small{display:block}.connection-bonus b{font:700 14px 'Manrope'}.connection-bonus small{font-size:10px;color:rgba(255,255,255,.78);margin-top:3px}
+
+.platform-join-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:20px}
+.join-option{padding:20px;border-radius:22px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2)}
+.join-option h3{font:700 19px/1.2 'Manrope';margin:10px 0 8px}
+.join-option p{font-size:12px;line-height:1.6;color:rgba(255,255,255,.82);margin:0 0 14px}
+.join-option small{display:block;margin-top:9px;font-size:9px;line-height:1.5;color:rgba(255,255,255,.72)}
+.join-platform{display:inline-flex;padding:6px 9px;border-radius:999px;background:rgba(255,255,255,.15);font-size:9px;font-weight:800;letter-spacing:.12em}
+.ios-link-button{background:#fff;color:#8b1bb3;box-shadow:0 12px 32px rgba(74,0,86,.16)}
+@media(max-width:800px){.platform-join-grid{grid-template-columns:1fr}.join-option .button{width:100%}}

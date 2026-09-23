@@ -6,9 +6,9 @@ Premium bilingual recruiting and onboarding website for **ABHI AGANCY**.
 
 - EN / RU mobile-first homepage
 - Premium black / white / champagne-gold design
-- Main referral code: `KCu4ZY`
-- Referral URLs: `/join?ref=KCu4ZY` or `/?ref=KCu4ZY`
-- Referral persistence and automatic form prefill
+- Prominent Tango Agency Code: `KCu4ZY`
+- Clear copy explaining that `KCu4ZY` is entered inside Tango to connect a broadcaster account to ABHI AGANCY
+- Separate website recruiter/referral-code infrastructure for future campaigns
 - Application form with 18+ confirmation
 - Real-broadcaster / no-prerecorded-stream messaging
 - Benefits, milestones, FTR explanation, FAQ and creator community
@@ -64,21 +64,17 @@ The admin dashboard can:
 - edit Telegram / WhatsApp / Instagram / email contacts
 - override EN and RU FAQs
 
-## Referral flow
+## Tango agency connection code
 
-The initial code is:
+The Tango Agency Code is:
 
 ```
 KCu4ZY
 ```
 
-Example:
+This code is **not entered into the website**. A broadcaster enters it inside Tango when connecting their Tango broadcaster account to ABHI AGANCY. A detailed step-by-step Tango instruction can be added to the website later.
 
-```
-https://your-domain.com/?ref=KCu4ZY
-```
-
-When a visitor opens a referral link, the code is validated, stored locally, displayed as applied, and automatically attached to the application.
+Website recruiter/referral codes are a separate feature for campaign attribution and should use different codes.
 
 ## Deployment
 

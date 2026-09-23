@@ -1,13 +1,13 @@
-# ABHI AGANCY
+# ABHI AGENCY
 
-Premium bilingual recruiting and onboarding website for **ABHI AGANCY**.
+Premium bilingual recruiting and onboarding website for **ABHI AGENCY**.
 
 ## Included
 
 - EN / RU mobile-first homepage
 - Premium black / white / champagne-gold design
 - Prominent Tango Agency Code: `KCu4ZY`
-- Clear copy explaining that `KCu4ZY` is entered inside Tango to connect a broadcaster account to ABHI AGANCY
+- Clear copy explaining that `KCu4ZY` is entered inside Tango to connect a broadcaster account to ABHI AGENCY
 - Separate website recruiter/referral-code infrastructure for future campaigns
 - Application form with 18+ confirmation
 - Real-broadcaster / no-prerecorded-stream messaging
@@ -72,7 +72,7 @@ The Tango Agency Code is:
 KCu4ZY
 ```
 
-This code is **not entered into the website**. A broadcaster enters it inside Tango when connecting their Tango broadcaster account to ABHI AGANCY. A detailed step-by-step Tango instruction can be added to the website later.
+This code is **not entered into the website**. A broadcaster enters it inside Tango when connecting their Tango broadcaster account to ABHI AGENCY. A detailed step-by-step Tango instruction can be added to the website later.
 
 Website recruiter/referral codes are a separate feature for campaign attribution and should use different codes.
 
@@ -88,6 +88,6 @@ npm run build
 
 ## Notes
 
-ABHI AGANCY does not guarantee earnings, bonuses, withdrawals, viewer counts or creator success. Bonus and campaign conditions can change and should be confirmed individually by an agency manager.
+ABHI AGENCY does not guarantee earnings, bonuses, withdrawals, viewer counts or creator success. Bonus and campaign conditions can change and should be confirmed individually by an agency manager.
 
 The public form intentionally does not collect passports or other sensitive identity documents.

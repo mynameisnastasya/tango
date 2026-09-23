@@ -66,7 +66,7 @@ export default function AdminPage(){
       let appRows:Application[]=[]
       if(a.ok) appRows=await a.json()
       else appRows=JSON.parse(localStorage.getItem('abhi_demo_applications')||'[]')
-      const refRows=r.ok?await r.json():[{code:'KCu4ZY',recruiter:'ABHI AGENCY Manager',market:'International',onboarding_bonus:'Current onboarding bonus confirmed by manager',active:true}]
+      const refRows=r.ok?await r.json():[{code:'KCu4ZY',recruiter:'ABHIGREEN Manager',market:'International',onboarding_bonus:'Current onboarding bonus confirmed by manager',active:true}]
       const settingsRows=s.ok?await s.json():defaultSettings
       setApps(appRows); setRefs(refRows); setSettings({...defaultSettings,...settingsRows})
       setFaqEn(JSON.stringify(settingsRows.faq_en||[],null,2))
@@ -156,7 +156,7 @@ export default function AdminPage(){
   if(!logged)return <main className="admin-login">
     <a href="/" className="admin-back"><ArrowLeft size={16}/> Back to website</a>
     <div className="login-card">
-      <div className="brand"><span className="brand-mark">A</span><span>ABHI <b>AGENCY</b></span></div>
+      <div className="brand"><span className="brand-mark">A</span><span><b>ABHIGREEN</b></span></div>
       <KeyRound size={30}/>
       <h1>Agency Admin</h1><p>Enter the ADMIN_KEY configured in your deployment environment.</p>
       <input type="password" value={key} onChange={e=>setKey(e.target.value)} onKeyDown={e=>e.key==='Enter'&&login()} placeholder="Admin key"/>
@@ -167,7 +167,7 @@ export default function AdminPage(){
 
   return <main className="admin-root">
     <aside className="admin-sidebar">
-      <div className="brand"><span className="brand-mark">A</span><span>ABHI <b>AGENCY</b></span></div>
+      <div className="brand"><span className="brand-mark">A</span><span><b>ABHIGREEN</b></span></div>
       <nav>
         <button className={tab==='applications'?'active':''} onClick={()=>setTab('applications')}><Users/>Applications</button>
         <button className={tab==='referrals'?'active':''} onClick={()=>setTab('referrals')}><Target/>Referral Codes</button>
@@ -178,7 +178,7 @@ export default function AdminPage(){
 
     <section className="admin-main">
       <header className="admin-topbar">
-        <div><small>ABHI AGENCY</small><h1>{tab==='applications'?'Applicants':tab==='referrals'?'Referral Performance':'Agency Settings'}</h1></div>
+        <div><small>ABHIGREEN</small><h1>{tab==='applications'?'Applicants':tab==='referrals'?'Referral Performance':'Agency Settings'}</h1></div>
         <button className="icon-button" onClick={refresh} title="Refresh"><RefreshCw className={loading?'spin':''}/></button>
       </header>
 

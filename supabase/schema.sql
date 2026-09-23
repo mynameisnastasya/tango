@@ -39,9 +39,6 @@ create table if not exists public.referral_codes (
   active boolean not null default true
 );
 
-insert into public.referral_codes (code, agency_name, recruiter, market, onboarding_bonus, active)
-values ('KCu4ZY','ABHI AGANCY','ABHI AGANCY Manager','International','Current onboarding bonus confirmed by manager',true)
-on conflict (code) do nothing;
 
 create table if not exists public.agency_settings (
   id integer primary key default 1 check (id = 1),

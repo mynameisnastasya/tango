@@ -20,3 +20,12 @@ jobs:
         run: npm install
       - name: Build
         run: npm run build
+      - name: Verify static Pages bundle
+        run: |
+          test -s index.html
+          test -s site.css
+          test -s site.js
+          test -s admin.html
+          node --check site.js
+          grep -q "KCu4ZY" site.js
+          grep -q "ABHI AGANCY" index.html

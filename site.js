@@ -1,7 +1,7 @@
 const translations={
 ru:{
 navEarn:'Как зарабатывать',navSupport:'Что мы даём',navStart:'Как начать',navApply:'Хочу в агентство',
-heroTitle:'Начни <em>зарабатывать онлайн</em> на live-стримах',heroLead:'Общайся с людьми в прямом эфире, развивай свою аудиторию и получай доход от контента. Даже если ты никогда раньше не стримила — ABHIGREEN поможет начать с нуля.',heroCta:'Хочу попробовать',heroSecond:'Как устроен заработок?',
+heroTitle:'Начни <em>зарабатывать онлайн</em> на live-стримах',heroLead:'Общайся с людьми в прямом эфире, развивай свою аудиторию и получай доход от контента. Даже если ты никогда раньше не стримила — ABHIGREEN поможет начать с нуля.',heroCta:'Хочу попробовать',heroSecond:'Как устроен заработок?',joinBonusTitle:'$15 бонус при подключении',joinBonusText:'Для новых подходящих стримеров ABHIGREEN • условия подтверждает менеджер',connectionBonusTitle:'Welcome bonus: $15',connectionBonusText:'для подходящих новых стримеров после подключения к ABHIGREEN',
 trust1a:'Без опыта',trust1b:'обучим с нуля',trust2a:'Гибкий формат',trust2b:'стримишь удалённо',trust3a:'Личный менеджер',trust3b:'не остаёшься одна',
 visualToday:'Сегодня',visualEarn:'Монетизация',visualEarn2:'Подарки → diamonds',visualManager:'Менеджер рядом',
 quick1a:'Можно начать с телефона',quick1b:'без сложной техники',quick2a:'Работай удалённо',quick2b:'из удобного тебе места',quick3a:'Не нужно быть блогером',quick3b:'важнее общение и регулярность',quick4a:'Поддержка агентства',quick4b:'от профиля до роста аудитории',
@@ -15,7 +15,7 @@ faqTitle:'Вопросы перед стартом',applyTitle:'Хочешь п�
 },
 en:{
 navEarn:'How you earn',navSupport:'Our support',navStart:'How to start',navApply:'Join the agency',
-heroTitle:'Start <em>earning online</em> with live streaming',heroLead:'Meet people live, grow an audience and monetize your content. Even if you have never streamed before, ABHIGREEN helps you start from zero.',heroCta:'I want to try',heroSecond:'How does earning work?',
+heroTitle:'Start <em>earning online</em> with live streaming',heroLead:'Meet people live, grow an audience and monetize your content. Even if you have never streamed before, ABHIGREEN helps you start from zero.',heroCta:'I want to try',heroSecond:'How does earning work?',joinBonusTitle:'$15 joining bonus',joinBonusText:'For eligible new ABHIGREEN creators • final conditions confirmed by your manager',connectionBonusTitle:'Welcome bonus: $15',connectionBonusText:'for eligible new creators after connecting to ABHIGREEN',
 trust1a:'No experience needed',trust1b:'we teach beginners',trust2a:'Flexible format',trust2b:'stream remotely',trust3a:'Personal manager',trust3b:'support when you need it',
 visualToday:'Today',visualEarn:'Monetization',visualEarn2:'Gifts → diamonds',visualManager:'Manager by your side',
 quick1a:'Start with your phone',quick1b:'no complex setup',quick2a:'Work remotely',quick2b:'from a place that suits you',quick3a:'No influencer status needed',quick3b:'conversation matters more',quick4a:'Agency support',quick4b:'from profile to audience growth',

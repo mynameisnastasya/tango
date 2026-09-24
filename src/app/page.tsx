@@ -302,17 +302,9 @@ export default function Home() {
 
         <div className="creator-visual">
           <div className="visual-glow"/>
-          <div className="phone">
-            <div className="phone-top"><span className="live-dot"/> LIVE <span>02:14:37</span></div>
-            <div className="creator-stage">
-              <div className="creator-avatar">A</div>
-              <div className="stream-copy"><small>ABHIGREEN CREATOR</small><strong>Build your community.</strong><span>Real conversations. Real growth.</span></div>
-            </div>
-            <div className="stream-stats">
-              <div><Users size={16}/><b>Community</b></div>
-              <div><Diamond size={16}/><b>Milestones</b></div>
-              <div><Star size={16}/><b>Support</b></div>
-            </div>
+          <div className="streamer-proof">
+            <img src="/assets/abhigreen-streamer.svg" alt="Example of a female creator live streaming on Tango"/>
+            <div className="streamer-proof-badge"><span>● LIVE</span><b>ABHIGREEN CREATOR</b></div>
           </div>
           <div className="float-card card-one"><HeartHandshake/><span>Personal manager<br/><b>from day one</b></span></div>
           <div className="float-card card-two"><Globe2/><span>International<br/><b>RU / EN</b></span></div>
@@ -352,6 +344,19 @@ export default function Home() {
               {copiedCode ? t.copied : t.copyCode}
             </button>
           </div>
+        </div>
+        <div className="join-guide-panel">
+          <div className="join-guide-copy">
+            <div className="eyebrow gold-text"><Target size={15}/> STEP-BY-STEP</div>
+            <h3>{lang==='ru'?'Инструкция: как подключиться к ABHIGREEN':'How to join ABHIGREEN on Tango'}</h3>
+            <p>{lang==='ru'?'Сохрани эту инструкцию: здесь показаны шаги для iPhone, Android, код агентства и бонус.':'Save this guide: it shows the iPhone and Android steps, the agency code and the joining bonus.'}</p>
+            <a className="button ghost" href="/assets/abhigreen-join-guide.svg" target="_blank" rel="noreferrer">
+              {lang==='ru'?'Открыть инструкцию крупно':'Open full-size guide'} <ArrowRight size={16}/>
+            </a>
+          </div>
+          <a className="join-guide-image" href="/assets/abhigreen-join-guide.svg" target="_blank" rel="noreferrer">
+            <img src="/assets/abhigreen-join-guide.svg" alt="How to join ABHIGREEN on Tango step-by-step guide"/>
+          </a>
         </div>
       </section>
 

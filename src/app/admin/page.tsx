@@ -3,7 +3,7 @@
 import { FormEvent, useEffect, useMemo, useState } from 'react'
 import {
   ArrowLeft, BadgeCheck, Download, Filter, KeyRound, LogOut, Plus, RefreshCw,
-  Search, Settings2, Users, UserCheck, Radio, Target, Save
+  Eye, Search, Settings2, Users, UserCheck, Radio, Target, Save, X
 } from 'lucide-react'
 
 type Application = {
@@ -23,12 +23,13 @@ type Settings = {
 
 const statuses = ['New','Contacted','Approved','Rejected','Active','FTR Completed']
 const defaultSettings:Settings = {
-  welcome_bonus:'4,000–5,000 coins', milestone_title:'100,000 Diamond Milestone',
+  welcome_bonus:'$15 joining bonus', milestone_title:'100,000 Diamond Milestone',
   milestone_reward:'Additional broadcaster reward may be available.',
   telegram_url:'', whatsapp_url:'', instagram_url:'', email:''
 }
 
 function csvCell(v:unknown){return `"${String(v ?? '').replace(/"/g,'""')}"`}
+function isLocalDemo(){return typeof window!=='undefined'&&['localhost','127.0.0.1'].includes(window.location.hostname)}
 
 export default function AdminPage(){
   const [key,setKey]=useState('')
@@ -46,6 +47,7 @@ export default function AdminPage(){
   const [newRef,setNewRef]=useState<Referral>({code:'',recruiter:'',market:'International',onboarding_bonus:'',active:true})
   const [faqEn,setFaqEn]=useState('')
   const [faqRu,setFaqRu]=useState('')
+  const [selected,setSelected]=useState<Application|null>(null)
 
   useEffect(()=>{
     const saved=sessionStorage.getItem('abhi_admin_key')
@@ -65,8 +67,14 @@ export default function AdminPage(){
       if(a.status===401 || r.status===401) throw new Error('Wrong admin key')
       let appRows:Application[]=[]
       if(a.ok) appRows=await a.json()
-      else appRows=JSON.parse(localStorage.getItem('abhi_demo_applications')||'[]')
-      const refRows=r.ok?await r.json():[{code:'KCu4ZY',recruiter:'ABHIGREEN Manager',market:'International',onboarding_bonus:'Current onboarding bonus confirmed by manager',active:true}]
+      else if(isLocalDemo()) appRows=JSON.parse(localStorage.getItem('abhi_demo_applications')||'[]')
+      else throw new Error('Applications backend unavailable')
+
+      let refRows:Referral[]=[]
+      if(r.ok) refRows=await r.json()
+      else if(isLocalDemo()) refRows=[{code:'KCu4ZY',recruiter:'ABHIGREEN Manager',market:'International',onboarding_bonus:'Current onboarding bonus confirmed by manager',active:true}]
+      else throw new Error('Referral backend unavailable')
+
       const settingsRows=s.ok?await s.json():defaultSettings
       setApps(appRows); setRefs(refRows); setSettings({...defaultSettings,...settingsRows})
       setFaqEn(JSON.stringify(settingsRows.faq_en||[],null,2))
@@ -86,18 +94,28 @@ export default function AdminPage(){
       const headers={'x-admin-key':key}
       const [a,r,s]=await Promise.all([fetch('/api/applications',{headers}),fetch('/api/referrals',{headers}),fetch('/api/settings')])
       if(a.ok)setApps(await a.json())
-      else setApps(JSON.parse(localStorage.getItem('abhi_demo_applications')||'[]'))
+      else if(isLocalDemo())setApps(JSON.parse(localStorage.getItem('abhi_demo_applications')||'[]'))
+      else setMessage('Could not refresh applications.')
+
       if(r.ok)setRefs(await r.json())
+      else if(!isLocalDemo())setMessage('Could not refresh referral codes.')
+
       if(s.ok){const x=await s.json();setSettings({...defaultSettings,...x});setFaqEn(JSON.stringify(x.faq_en||[],null,2));setFaqRu(JSON.stringify(x.faq_ru||[],null,2))}
     }finally{setLoading(false)}
   }
 
   async function updateStatus(id:string,next:string){
+    const previous=apps.find(x=>x.id===id)?.status
     setApps(v=>v.map(x=>x.id===id?{...x,status:next}:x))
     const res=await fetch('/api/applications',{method:'PATCH',headers:{'Content-Type':'application/json','x-admin-key':key},body:JSON.stringify({id,status:next})})
     if(!res.ok){
-      const demo=JSON.parse(localStorage.getItem('abhi_demo_applications')||'[]').map((x:Application)=>x.id===id?{...x,status:next}:x)
-      localStorage.setItem('abhi_demo_applications',JSON.stringify(demo))
+      if(isLocalDemo()){
+        const demo=JSON.parse(localStorage.getItem('abhi_demo_applications')||'[]').map((x:Application)=>x.id===id?{...x,status:next}:x)
+        localStorage.setItem('abhi_demo_applications',JSON.stringify(demo))
+      }else{
+        if(previous)setApps(v=>v.map(x=>x.id===id?{...x,status:previous}:x))
+        setMessage('Could not update applicant status.')
+      }
     }
   }
 
@@ -105,10 +123,12 @@ export default function AdminPage(){
     e.preventDefault(); setMessage('')
     const res=await fetch('/api/referrals',{method:'POST',headers:{'Content-Type':'application/json','x-admin-key':key},body:JSON.stringify(newRef)})
     if(res.ok){const row=await res.json();setRefs(v=>[row,...v.filter(x=>x.code!==row.code)]);setNewRef({code:'',recruiter:'',market:'International',onboarding_bonus:'',active:true});setMessage('Referral saved.')}
-    else{
+    else if(isLocalDemo()){
       setRefs(v=>[newRef,...v.filter(x=>x.code!==newRef.code)])
       setNewRef({code:'',recruiter:'',market:'International',onboarding_bonus:'',active:true})
-      setMessage('Saved in dashboard demo mode. Configure Supabase for shared persistence.')
+      setMessage('Saved in local demo mode only.')
+    }else{
+      setMessage('Could not save referral. Check the backend configuration and try again.')
     }
   }
 
@@ -119,14 +139,18 @@ export default function AdminPage(){
     try{faq_ru=faqRu?JSON.parse(faqRu):[]}catch{setMessage('FAQ RU must be valid JSON.');return}
     const payload={...settings,faq_en,faq_ru}
     const res=await fetch('/api/settings',{method:'PUT',headers:{'Content-Type':'application/json','x-admin-key':key},body:JSON.stringify(payload)})
-    setMessage(res.ok?'Settings saved.':'Backend is not configured yet. Add Supabase environment variables to save globally.')
+    if(res.ok)setMessage('Settings saved.')
+    else{
+      const problem=await res.json().catch(()=>null)
+      setMessage(problem?.error||'Could not save settings.')
+    }
   }
 
   const countries=useMemo(()=>['All',...Array.from(new Set(apps.map(x=>x.country).filter(Boolean))).sort()], [apps])
   const recruiters=useMemo(()=>['All',...Array.from(new Set(refs.map(x=>x.recruiter).filter(Boolean))).sort()], [refs])
   const refOwner=(code:string)=>refs.find(r=>r.code===code)?.recruiter||'Unassigned'
   const filtered=useMemo(()=>apps.filter(a=>{
-    const hay=[a.name,a.country,a.telegram,a.instagram,a.platform,a.referral_code].join(' ').toLowerCase()
+    const hay=[a.name,a.country,a.telegram,a.whatsapp,a.instagram,a.platform,a.username,a.referral_code,a.message].join(' ').toLowerCase()
     return (!search||hay.includes(search.toLowerCase())) && (country==='All'||a.country===country) && (status==='All'||a.status===status) && (recruiter==='All'||refOwner(a.referral_code)===recruiter)
   }),[apps,search,country,status,recruiter,refs])
 
@@ -198,7 +222,7 @@ export default function AdminPage(){
             <button className="button ghost admin-export" onClick={exportCsv}><Download/>Export CSV</button>
           </div>
           <div className="table-wrap">
-            <table><thead><tr><th>Applicant</th><th>Country</th><th>Contact</th><th>Platform</th><th>Referral</th><th>Hours</th><th>Status</th><th>Date</th></tr></thead>
+            <table><thead><tr><th>Applicant</th><th>Country</th><th>Contact</th><th>Platform</th><th>Referral</th><th>Hours</th><th>Status</th><th>Date</th><th></th></tr></thead>
             <tbody>{filtered.map(a=><tr key={a.id}>
               <td><b>{a.name}</b><small>{a.languages||'—'}</small></td><td>{a.country}</td>
               <td><span className="stack">{a.telegram||a.whatsapp||a.instagram||'—'}</span></td>
@@ -207,6 +231,7 @@ export default function AdminPage(){
               <td>{a.hours_per_week||'—'}</td>
               <td><select className={'status-select status-'+a.status.toLowerCase().replaceAll(' ','-')} value={a.status} onChange={e=>updateStatus(a.id,e.target.value)}>{statuses.map(x=><option key={x}>{x}</option>)}</select></td>
               <td>{new Date(a.created_at).toLocaleDateString()}</td>
+              <td><button className="row-action" type="button" onClick={()=>setSelected(a)}><Eye size={14}/>View</button></td>
             </tr>)}</tbody></table>
             {!filtered.length&&<div className="empty-state">No applications match these filters.</div>}
           </div>
@@ -251,5 +276,20 @@ export default function AdminPage(){
         <div className="settings-save"><button className="button gold" onClick={saveSettings}><Save/>Save settings</button>{message&&<span>{message}</span>}</div>
       </div>}
     </section>
+
+    {selected&&<div className="app-detail-backdrop" role="presentation" onMouseDown={e=>{if(e.target===e.currentTarget)setSelected(null)}}>
+      <section className="app-detail" role="dialog" aria-modal="true" aria-label={`Application from ${selected.name}`}>
+        <div className="app-detail-head"><div><small>APPLICATION</small><h2>{selected.name}</h2><p>{selected.country} • {new Date(selected.created_at).toLocaleString()}</p></div><button className="icon-button" type="button" aria-label="Close details" onClick={()=>setSelected(null)}><X/></button></div>
+        <div className="app-detail-grid">
+          <div><small>Languages</small><b>{selected.languages||'—'}</b></div><div><small>Hours / week</small><b>{selected.hours_per_week||'—'}</b></div>
+          <div><small>Telegram</small><b>{selected.telegram||'—'}</b></div><div><small>WhatsApp</small><b>{selected.whatsapp||'—'}</b></div>
+          <div><small>Instagram</small><b>{selected.instagram||'—'}</b></div><div><small>Platform</small><b>{selected.platform||'—'}</b></div>
+          <div><small>Username</small><b>{selected.username||'—'}</b></div><div><small>Referral</small><b>{selected.referral_code||'Direct'}</b></div>
+        </div>
+        <div className="app-detail-copy"><small>Experience</small><p>{selected.experience||'—'}</p></div>
+        <div className="app-detail-copy"><small>Message</small><p>{selected.message||'—'}</p></div>
+        <div className="app-detail-copy"><small>Source</small><p className="break-anywhere">{selected.source||'—'}</p></div>
+      </section>
+    </div>}
   </main>
 }

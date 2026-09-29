@@ -1,17 +1,17 @@
 const translations={
 ru:{
 navEarn:'Как зарабатывать',navSupport:'Что мы даём',navStart:'Как начать',navApply:'Хочу в агентство',
-heroTitle:'Начни <em>зарабатывать онлайн</em> на live-стримах',heroLead:'Общайся с людьми в прямом эфире, развивай свою аудиторию и получай доход от контента. Даже если ты никогда раньше не стримила — ABHIGREEN поможет начать с нуля.',heroCta:'Хочу попробовать',heroSecond:'Как устроен заработок?',joinBonusTitle:'$15 бонус при подключении',joinBonusText:'Для новых подходящих стримеров ABHIGREEN • условия подтверждает менеджер',connectionBonusTitle:'Welcome bonus: $15',connectionBonusText:'для подходящих новых стримеров после подключения к ABHIGREEN',
+heroTitle:'Начни <em>зарабатывать онлайн</em> на прямых эфирах',heroLead:'Общайся с людьми в прямом эфире, развивай свою аудиторию и получай доход от контента. Даже если ты никогда раньше не стримила — ABHIGREEN поможет начать с нуля.',heroCta:'Хочу попробовать',heroSecond:'Как устроен заработок?',joinBonusTitle:'$15 бонус при подключении',joinBonusText:'Для новых подходящих стримеров ABHIGREEN • условия подтверждает менеджер',connectionBonusTitle:'Бонус за подключение: $15',connectionBonusText:'для подходящих новых стримеров после подключения к ABHIGREEN',
 trust1a:'Без опыта',trust1b:'обучим с нуля',trust2a:'Гибкий формат',trust2b:'стримишь удалённо',trust3a:'Личный менеджер',trust3b:'не остаёшься одна',
-visualToday:'Сегодня',visualEarn:'Монетизация',visualEarn2:'Подарки → diamonds',visualManager:'Менеджер рядом',
+visualToday:'Сегодня',visualEarn:'Монетизация',visualEarn2:'Подарки → внутренняя валюта',visualManager:'Менеджер рядом',
 quick1a:'Можно начать с телефона',quick1b:'без сложной техники',quick2a:'Работай удалённо',quick2b:'из удобного тебе места',quick3a:'Не нужно быть блогером',quick3b:'важнее общение и регулярность',quick4a:'Поддержка агентства',quick4b:'от профиля до роста аудитории',
 introTitle:'Это не «сидеть в интернете».<br><em>Это работа с аудиторией.</em>',introText:'Ты выходишь в эфир, общаешься, знакомишься с людьми, создаёшь настроение и постепенно собираешь вокруг себя постоянных зрителей. Чем сильнее твоя аудитория и активнее эфиры — тем больше возможностей для монетизации.',introNote:'Доход не гарантирован: он зависит от активности, аудитории, формата контента, региона и актуальных правил Tango.',
 earnTitle:'Откуда вообще берётся <em>заработок?</em>',earnSub:'На Tango есть несколько способов монетизировать активность и внимание аудитории. Мы помогаем понять, как использовать их грамотно.',
-money1t:'Подарки во время эфиров',money1p:'Зрители отправляют виртуальные подарки. Они превращаются в diamonds на аккаунте стримера, которые по правилам Tango можно конвертировать в реальные деньги.',money2t:'Лояльная аудитория',money2p:'Постоянные зрители возвращаются на эфиры, участвуют в общении и поддерживают любимых creators. Мы учим не просто «сидеть в кадре», а строить комьюнити.',money3t:'Батлы и активности',money3p:'Батлы, цели и события делают эфир динамичнее и могут давать дополнительные возможности для diamonds и бонусов по текущим условиям платформы.',money4t:'Платный контент',money4p:'Tango развивает paid posts и другие форматы, поэтому профиль может работать на монетизацию не только в момент прямого эфира.',moneySummary:'<b>Главное:</b> тебе не нужно приходить с огромной аудиторией. Нужны желание общаться, регулярность и готовность учиться — всё остальное мы разберём вместе.',
+money1t:'Подарки во время эфиров',money1p:'Зрители могут отправлять виртуальные подарки. По актуальным правилам Tango они учитываются в системе платформы и могут участвовать в механике выплат.',money2t:'Лояльная аудитория',money2p:'Постоянные зрители возвращаются на эфиры, участвуют в общении и поддерживают стримеров, которые им нравятся. Мы учим не просто «сидеть в кадре», а строить сообщество.',money3t:'Батлы и активности',money3p:'Батлы, цели и события делают эфир динамичнее и могут давать дополнительные возможности для монетизации и бонусов по текущим условиям платформы.',money4t:'Платный контент',money4p:'Tango развивает платный контент и другие форматы, поэтому профиль может давать дополнительные возможности для монетизации и вне прямого эфира.',moneySummary:'<b>Главное:</b> тебе не нужно приходить с огромной аудиторией. Нужны желание общаться, регулярность и готовность учиться — всё остальное мы разберём вместе.',
 supportTitle:'Ты не просто получаешь код.<br><em>Ты получаешь команду.</em>',supportLead:'Наша задача — сократить путь новичка от «я вообще не понимаю, что делать» до уверенных, регулярных эфиров.',s1t:'Настройка профиля',s1p:'Поможем с оформлением, позиционированием и первым впечатлением для зрителей.',s2t:'Подготовка к первым эфирам',s2p:'Разберём свет, кадр, темы, формат общения и как не зависнуть в тишине.',s3t:'Обучение монетизации',s3p:'Объясним механику подарков, активности зрителей и способы развивать постоянную аудиторию.',s4t:'Контент и идеи',s4p:'Подскажем темы, форматы, цели и активности, чтобы эфиры не превращались в одно и то же.',s5t:'Правила Tango',s5p:'Поможем понять, что можно и нельзя, чтобы работать безопасно и не рисковать аккаунтом.',s6t:'Личный менеджер',s6p:'Можно задавать вопросы, разбирать сложные ситуации и корректировать стратегию по мере роста.',
 codeTitle:'Подключиться к ABHIGREEN в Tango можно двумя способами',codeText:'Выбери способ для своего телефона. Если что-то не получается — менеджер поможет.',androidTitle:'Самый быстрый способ',androidText:'На Android реферальная ссылка открывает Tango и помогает начать подключение.',openTango:'Нажми здесь, чтобы присоединиться',androidNote:'Реферальная ссылка предназначена для Android.',iosTitle:'Создай аккаунт через сайт Tango',iosText:'На iPhone открой tango.me, создай новый аккаунт, затем в Tango зайди в Settings → Join an Agency и введи код ABHIGREEN.',openTangoWeb:'Открыть tango.me',iosNote:'Для нового аккаунта используй код в первые 5 часов.',codeLabel:'TANGO AGENCY CODE',copyCode:'Скопировать код',copied:'Скопировано ✓',codeWarning:'Этот код вводится в Tango, не на сайте.',guideTitle:'Инструкция: как подключиться к ABHIGREEN',guideText:'Сохрани эту инструкцию: здесь на одном экране показаны шаги для iPhone, Android, код агентства и бонус.',openGuide:'Открыть инструкцию крупно',
-fitTitle:'Подойдёт, если ты хочешь <em>новый онлайн-формат работы</em>',fit1:'Тебе 18 лет или больше',fit2:'Тебе комфортно общаться с людьми',fit3:'Готова появляться в кадре и быть собой',fit4:'Хочешь гибкий удалённый формат',fit5:'Готова выходить в эфир регулярно',fit6:'Хочешь учиться и развивать аудиторию',rulesNote:'Мы работаем только с реальными стримерами. Записанные трансляции, фейковые аккаунты, impersonation и обход правил платформы не принимаются.',
-faqTitle:'Вопросы перед стартом',applyTitle:'Хочешь попробовать?<br><em>Напиши нам.</em>',applyLead:'Оставь короткую заявку. Мы посмотрим, подойдёт ли тебе формат, ответим на вопросы и объясним следующие шаги без давления.',remote:'Удалённо',fName:'Как тебя зовут?',fCountry:'Страна',fExperience:'Есть опыт стримов?',fTango:'Если уже есть Tango — username',fHours:'Сколько времени в неделю готова уделять?',fMessage:'Расскажи пару слов о себе',age:'Мне 18 лет или больше.',consent:'Я согласна с Privacy Policy и Terms.',send:'Отправить заявку',footerText:'Помогаем девушкам 18+ уверенно начать и развиваться в live-стриминге.'
+fitTitle:'Подойдёт, если ты хочешь <em>новый онлайн-формат работы</em>',fit1:'Тебе 18 лет или больше',fit2:'Тебе комфортно общаться с людьми',fit3:'Готова появляться в кадре и быть собой',fit4:'Хочешь гибкий удалённый формат',fit5:'Готова выходить в эфир регулярно',fit6:'Хочешь учиться и развивать аудиторию',rulesNote:'Мы работаем только с реальными стримерами. Записанные трансляции, фейковые аккаунты, выдача себя за другого человека и обход правил платформы не допускаются.',
+faqTitle:'Вопросы перед стартом',applyTitle:'Хочешь попробовать?<br><em>Напиши нам.</em>',applyLead:'Оставь короткую заявку. Мы посмотрим, подойдёт ли тебе формат, ответим на вопросы и объясним следующие шаги без давления.',remote:'Удалённо',fName:'Как тебя зовут?',fCountry:'Страна',fExperience:'Есть опыт стримов?',fTango:'Если уже есть Tango — username',fHours:'Сколько времени в неделю готова уделять?',fMessage:'Расскажи пару слов о себе',age:'Мне 18 лет или больше.',consent:'Я согласна с политикой конфиденциальности и условиями использования.',send:'Отправить заявку',footerText:'Помогаем стримерам 18+ уверенно начать и развиваться в прямых эфирах.'
 },
 en:{
 navEarn:'How you earn',navSupport:'Our support',navStart:'How to start',navApply:'Join the agency',
@@ -30,12 +30,12 @@ faqTitle:'Questions before you start',applyTitle:'Want to try?<br><em>Talk to us
 const faqs={
 ru:[
 ['Мне обязательно уже быть блогером?','Нет. Для старта важнее уметь или хотеть общаться, быть естественной в кадре и регулярно выходить в эфир. Мы поможем с оформлением, темами и первыми шагами.'],
-['Как именно зарабатывает стример?','Один из основных механизмов Tango — виртуальные подарки от зрителей. Они превращаются в diamonds на аккаунте creator. Также платформа развивает платный контент, батлы и другие активности.'],
+['Как именно зарабатывает стример?','Один из механизмов Tango — виртуальные подарки от зрителей. Также платформа развивает платный контент, батлы и другие активности. Конкретные условия выплат определяются актуальными правилами Tango.'],
 ['Сколько я смогу зарабатывать?','Фиксированной суммы нет и обещать её было бы неправильно. Результат зависит от времени в эфире, качества общения, постоянной аудитории, активности и правил платформы. Наша задача — помочь тебе быстрее разобраться и не терять время на типичных ошибках.'],
 ['Нужно ли платить ABHIGREEN за вступление?','За подачу заявки и вступление на сайте мы не берём оплату. Если появятся отдельные условия конкретной кампании, менеджер объяснит их заранее.'],
 ['Что мне понадобится для старта?','Смартфон, стабильный интернет, аккуратный кадр, желание общаться и время на регулярные эфиры. С остальной подготовкой поможем.'],
 ['Можно ли совмещать со своей работой или учёбой?','Формат стриминга гибкий, поэтому многие выстраивают расписание под свою жизнь. Но для роста важна регулярность.'],
-['Что такое KCu4ZY?','Это код ABHIGREEN для подключения аккаунта именно внутри Tango. На сайте его вводить не нужно. Инструкцию по подключению мы добавим отдельно.'],
+['Что такое KCu4ZY?','Это код ABHIGREEN для подключения аккаунта именно внутри Tango. На сайте его вводить не нужно. Пошаговая инструкция есть выше на этой странице.'],
 ['Если у меня уже есть аккаунт Tango?','Укажи username в заявке и обязательно сообщи менеджеру, если аккаунт уже связан с другим агентством. Дальнейшие шаги зависят от правил платформы.'],
 ['Вы помогаете с идеями для эфиров?','Да. Мы можем разбирать темы, подачу, общение со зрителями, цели эфира и способы сделать контент живее.'],
 ['Есть ли правила по контенту?','Да. Tango устанавливает правила для live-контента, и их нужно соблюдать. Мы помогаем новичкам понять основные требования до старта.']
@@ -53,29 +53,50 @@ en:[
 ['Are there content rules?','Yes. Tango has live broadcasting rules that creators must follow. We help beginners understand the main requirements before they start.']
 ]};
 let lang=localStorage.getItem('abhi_lang')||'ru';
+const params=new URLSearchParams(location.search);const referralCode=(params.get('ref')||params.get('referral')||'').trim().slice(0,80);
 const langButton=document.getElementById('langButton');
 const menuButton=document.getElementById('menuButton');
 const mobileMenu=document.getElementById('mobileMenu');
 function applyLanguage(){
- document.documentElement.lang=lang;langButton.textContent=lang.toUpperCase();
+ document.documentElement.lang=lang;langButton.textContent=lang.toUpperCase();langButton.setAttribute('aria-label',lang==='ru'?'Switch to English':'Переключить на русский');
  document.querySelectorAll('[data-i18n]').forEach(el=>{const k=el.dataset.i18n;if(translations[lang][k])el.textContent=translations[lang][k]});
  document.querySelectorAll('[data-i18n-html]').forEach(el=>{const k=el.dataset.i18nHtml;if(translations[lang][k])el.innerHTML=translations[lang][k]});
  const summary=document.querySelector('[data-i18n="moneySummary"]');if(summary)summary.innerHTML=translations[lang].moneySummary;
  renderFaq();localStorage.setItem('abhi_lang',lang);
 }
 function renderFaq(){
- const el=document.getElementById('faqList');el.innerHTML=faqs[lang].map((x,i)=>'<div class="faq-item '+(i===0?'open':'')+'"><button class="faq-q"><span>'+x[0]+'</span><span>＋</span></button><div class="faq-a">'+x[1]+'</div></div>').join('');
- el.querySelectorAll('.faq-q').forEach(b=>b.addEventListener('click',()=>b.parentElement.classList.toggle('open')));
+ const el=document.getElementById('faqList');el.innerHTML=faqs[lang].map((x,i)=>'<div class="faq-item '+(i===0?'open':'')+'"><button class="faq-q" type="button" aria-expanded="'+(i===0?'true':'false')+'"><span>'+x[0]+'</span><span>＋</span></button><div class="faq-a">'+x[1]+'</div></div>').join('');
+ el.querySelectorAll('.faq-q').forEach(b=>b.addEventListener('click',()=>{const item=b.parentElement;item.classList.toggle('open');b.setAttribute('aria-expanded',item.classList.contains('open')?'true':'false')}));
 }
 langButton.addEventListener('click',()=>{lang=lang==='ru'?'en':'ru';applyLanguage()});
-menuButton.addEventListener('click',()=>mobileMenu.classList.toggle('hidden'));
-mobileMenu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>mobileMenu.classList.add('hidden')));
+menuButton.addEventListener('click',()=>{mobileMenu.classList.toggle('hidden');menuButton.setAttribute('aria-expanded',mobileMenu.classList.contains('hidden')?'false':'true')});
+mobileMenu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{mobileMenu.classList.add('hidden');menuButton.setAttribute('aria-expanded','false')}));
 const copyButton=document.getElementById('copyTangoCode');
 copyButton.addEventListener('click',async()=>{try{await navigator.clipboard.writeText('KCu4ZY');copyButton.textContent=translations[lang].copied;setTimeout(()=>copyButton.textContent=translations[lang].copyCode,1600)}catch{copyButton.textContent='KCu4ZY'}});
-document.getElementById('applicationForm').addEventListener('submit',e=>{
- e.preventDefault();const fd=new FormData(e.currentTarget);const app=Object.fromEntries(fd.entries());
- app.id=crypto.randomUUID?crypto.randomUUID():String(Date.now());app.created_at=new Date().toISOString();app.status='New';app.age_confirmed=fd.get('age_confirmed')==='on';app.consent=fd.get('consent')==='on';app.source=location.href;
- const saved=JSON.parse(localStorage.getItem('abhi_demo_applications')||'[]');saved.unshift(app);localStorage.setItem('abhi_demo_applications',JSON.stringify(saved));
- document.getElementById('formResult').innerHTML='<div class="form-success">'+(lang==='ru'?'Спасибо! Заявка сохранена. Мы свяжемся с тобой по указанному контакту.':'Thank you! Your application has been saved. We will contact you using the details you provided.')+'</div>';e.currentTarget.reset();
+document.getElementById('applicationForm').addEventListener('submit',async e=>{
+ e.preventDefault();
+ const form=e.currentTarget,fd=new FormData(form),result=document.getElementById('formResult'),submit=form.querySelector('button[type="submit"]');
+ const hasContact=['telegram','whatsapp','instagram'].some(k=>String(fd.get(k)||'').trim());
+ result.innerHTML='';
+ if(!hasContact){result.innerHTML='<div class="form-error">'+(lang==='ru'?'Укажи хотя бы Telegram или WhatsApp, чтобы менеджер мог с тобой связаться.':'Add Telegram or WhatsApp so a manager can contact you.')+'</div>';return}
+ const app=Object.fromEntries(fd.entries());
+ app.age_confirmed=fd.get('age_confirmed')==='on';app.consent=fd.get('consent')==='on';app.referral_code=referralCode;app.source=location.href.split('#')[0];
+ submit.disabled=true;
+ try{
+   const res=await fetch('./api/applications',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(app)});
+   if(!res.ok){
+     const localDemo=['localhost','127.0.0.1'].includes(location.hostname);
+     if(localDemo){
+       app.id=crypto.randomUUID?crypto.randomUUID():String(Date.now());app.created_at=new Date().toISOString();app.status='New';
+       const saved=JSON.parse(localStorage.getItem('abhi_demo_applications')||'[]');saved.unshift(app);localStorage.setItem('abhi_demo_applications',JSON.stringify(saved));
+       result.innerHTML='<div class="form-success">'+(lang==='ru'?'Демо-заявка сохранена только в этом браузере.':'Demo application saved in this browser only.')+'</div>';
+     }else{throw new Error('SUBMISSION_FAILED')}
+   }else{
+     result.innerHTML='<div class="form-success">'+(lang==='ru'?'Спасибо! Заявка отправлена менеджеру.':'Thank you! Your application has been sent to the manager.')+'</div>';
+   }
+   form.reset();
+ }catch{
+   result.innerHTML='<div class="form-error">'+(lang==='ru'?'Не удалось отправить заявку. Эта версия сайта не передаёт данные менеджеру без подключённого backend. Используй способы подключения к Tango выше или открой рабочую production-версию сайта.':'We could not send the application. This site version cannot deliver leads without a connected backend. Use the Tango connection options above or open the production deployment.')+'</div>';
+ }finally{submit.disabled=false}
 });
 applyLanguage();

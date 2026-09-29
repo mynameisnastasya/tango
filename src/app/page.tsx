@@ -342,7 +342,16 @@ export default function Home() {
         <div className="creator-visual">
           <div className="visual-glow"/>
           <div className="streamer-proof">
-            <img src="/assets/abhigreen-streamer.jpg" loading="eager" alt={lang==='ru'?'Пример прямого эфира стримера ABHIGREEN в Tango':'Example of an ABHIGREEN creator live streaming on Tango'}/>
+            <img
+              src="https://images.pexels.com/photos/7676397/pexels-photo-7676397.jpeg?auto=compress&cs=tinysrgb&w=1600"
+              srcSet="https://images.pexels.com/photos/7676397/pexels-photo-7676397.jpeg?auto=compress&cs=tinysrgb&w=900 900w, https://images.pexels.com/photos/7676397/pexels-photo-7676397.jpeg?auto=compress&cs=tinysrgb&w=1600 1600w, https://images.pexels.com/photos/7676397/pexels-photo-7676397.jpeg?auto=compress&cs=tinysrgb&w=2200 2200w"
+              sizes="(max-width: 1100px) 94vw, 470px"
+              loading="eager"
+              decoding="async"
+              fetchPriority="high"
+              referrerPolicy="no-referrer"
+              alt={lang==='ru'?'Взрослая девушка готовится к прямому эфиру со смартфоном и кольцевой лампой':'Adult female content creator preparing a live stream with a smartphone and ring light'}
+            />
             <div className="streamer-proof-badge"><span>● LIVE</span><b>ABHIGREEN CREATOR</b></div>
           </div>
           <div className="float-card card-one"><HeartHandshake/><span>{lang==='ru'?'Личный менеджер':'Personal manager'}<br/><b>{lang==='ru'?'с первого дня':'from day one'}</b></span></div>
@@ -388,14 +397,36 @@ export default function Home() {
           <div className="join-guide-copy">
             <div className="eyebrow gold-text"><Target size={15}/> {lang==='ru'?'ПОШАГОВАЯ ИНСТРУКЦИЯ':'STEP-BY-STEP'}</div>
             <h3>{lang==='ru'?'Инструкция: как подключиться к ABHIGREEN':'How to join ABHIGREEN on Tango'}</h3>
-            <p>{lang==='ru'?'Сохрани эту инструкцию: здесь показаны шаги для iPhone, Android, код агентства и бонус.':'Save this guide: it shows the iPhone and Android steps, the agency code and the joining bonus.'}</p>
-            <a className="button ghost" href="/assets/abhigreen-join-guide.jpg" target="_blank" rel="noopener noreferrer">
-              {lang==='ru'?'Открыть инструкцию крупно':'Open full-size guide'} <ArrowRight size={16}/>
-            </a>
+            <p>{lang==='ru'?'Шаги теперь собраны прямо на странице — текст остаётся чётким на любом экране и не превращается в пиксели.':'The steps now live directly on the page, so the text stays sharp on every screen instead of turning into pixels.'}</p>
+            <div className="guide-quality-note"><Sparkles size={16}/><span>{lang==='ru'?'Не скриншот: это живая веб-инструкция в высоком качестве.':'Not a screenshot: this is a live high-resolution web guide.'}</span></div>
           </div>
-          <a className="join-guide-image" href="/assets/abhigreen-join-guide.jpg" target="_blank" rel="noopener noreferrer">
-            <img src="/assets/abhigreen-join-guide.jpg" loading="lazy" alt={lang==='ru'?'Пошаговая инструкция подключения к ABHIGREEN в Tango':'How to join ABHIGREEN on Tango step-by-step guide'}/>
-          </a>
+          <div className="guide-board" aria-label={lang==='ru'?'Пошаговая инструкция подключения ABHIGREEN в Tango':'ABHIGREEN Tango connection guide'}>
+            <div className="guide-code">
+              <small>TANGO AGENCY CODE</small>
+              <strong>KCu4ZY</strong>
+              <span>{lang==='ru'?'Код вводится внутри Tango, не на сайте.':'Enter the code inside Tango, not on this website.'}</span>
+            </div>
+            <div className="guide-columns">
+              <section className="guide-lane guide-android">
+                <div className="guide-lane-title"><span>🤖</span><b>ANDROID</b></div>
+                <ol>
+                  <li>{lang==='ru'?'Нажми на реферальную ссылку':'Open the referral link'}</li>
+                  <li>{lang==='ru'?'Открой Tango и создай аккаунт':'Open Tango and create your account'}</li>
+                  <li>{lang==='ru'?'Заверши подключение к агентству':'Finish connecting to the agency'}</li>
+                </ol>
+              </section>
+              <section className="guide-lane guide-ios">
+                <div className="guide-lane-title"><span>●</span><b>IPHONE / IOS</b></div>
+                <ol>
+                  <li>{lang==='ru'?'Открой tango.me':'Open tango.me'}</li>
+                  <li>{lang==='ru'?'Создай новый аккаунт':'Create a new account'}</li>
+                  <li>{lang==='ru'?'В Tango: Settings → Join an Agency':'In Tango: Settings → Join an Agency'}</li>
+                  <li>{lang==='ru'?'Введи KCu4ZY в первые 5 часов':'Enter KCu4ZY within the first 5 hours'}</li>
+                </ol>
+              </section>
+            </div>
+            <div className="guide-bonus"><span>🎁</span><div><b>{lang==='ru'?'Бонус $15':'$15 bonus'}</b><small>{lang==='ru'?'Для подходящих новых стримеров • условия подтверждает менеджер':'For eligible new creators • conditions confirmed by your manager'}</small></div></div>
+          </div>
         </div>
       </section>
 

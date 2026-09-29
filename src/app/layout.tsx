@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import './globals.css'
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://mynameisnastasya.github.io/tango/'
-const socialImage = new URL('assets/abhigreen-streamer.jpg', siteUrl).toString()
+const socialImage = 'https://images.pexels.com/photos/7676397/pexels-photo-7676397.jpeg?auto=compress&cs=tinysrgb&w=1600'
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),

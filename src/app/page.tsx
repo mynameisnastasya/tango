@@ -2,7 +2,7 @@
 
 import { FormEvent, useEffect, useMemo, useState } from 'react'
 import {
-  ArrowRight, BadgeCheck, Check, ChevronDown, CircleDollarSign, Crown,
+  AlertCircle, ArrowRight, BadgeCheck, Check, ChevronDown, CircleDollarSign, Crown,
   Diamond, Globe2, HeartHandshake, Instagram, Languages, Menu, MessageCircle,
   ShieldCheck, Sparkles, Star, Target, Users, X, Zap
 } from 'lucide-react'
@@ -212,13 +212,28 @@ export default function Home() {
   const [openFaq, setOpenFaq] = useState<number | null>(0)
   const [sending, setSending] = useState(false)
   const [sent, setSent] = useState(false)
+  const [formError, setFormError] = useState('')
+  const [referralCode, setReferralCode] = useState('')
   const t = copy[lang]
   const configuredFaq = lang === 'en' ? settings.faq_en : settings.faq_ru
   const faqItems = Array.isArray(configuredFaq) && configuredFaq.length ? configuredFaq : faqs[lang]
 
   useEffect(() => {
+    const storedLang = window.localStorage.getItem('abhi_lang')
+    if (storedLang === 'en' || storedLang === 'ru') setLang(storedLang)
+
+    const params = new URLSearchParams(window.location.search)
+    const ref = params.get('ref') || params.get('referral')
+    if (ref) setReferralCode(ref.trim().slice(0, 80))
+
     fetch('/api/settings').then(r => r.ok ? r.json() : null).then(x => x && setSettings(x)).catch(() => {})
   }, [])
+
+  useEffect(() => {
+    document.documentElement.lang = lang
+    window.localStorage.setItem('abhi_lang', lang)
+    setMenu(false)
+  }, [lang])
 
   async function copyTangoCode() {
     try {
@@ -232,27 +247,51 @@ export default function Home() {
 
   async function submit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault()
+    setFormError('')
     setSending(true)
-    const fd = new FormData(e.currentTarget)
+    const form = e.currentTarget
+    const fd = new FormData(form)
     const data = Object.fromEntries(fd.entries())
+    const hasContact = ['telegram', 'whatsapp', 'instagram'].some(key => String(fd.get(key) || '').trim())
+
+    if (!hasContact) {
+      setFormError(lang === 'ru' ? 'Укажи хотя бы один способ связи: Telegram, WhatsApp или Instagram.' : 'Add at least one contact method: Telegram, WhatsApp or Instagram.')
+      setSending(false)
+      return
+    }
+
     const payload = {
       ...data,
       age_confirmed: fd.get('age_confirmed') === 'on',
       consent: fd.get('consent') === 'on',
-      referral_code: '',
-      source: window.location.href,
+      referral_code: referralCode,
+      source: window.location.href.split('#')[0],
     }
+
     try {
       const res = await fetch('/api/applications', {
-        method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(payload)
+        method:'POST',
+        headers:{'Content-Type':'application/json'},
+        body:JSON.stringify(payload)
       })
+
       if (!res.ok) {
-        const saved = JSON.parse(localStorage.getItem('abhi_demo_applications') || '[]')
-        saved.unshift({ id: crypto.randomUUID(), created_at:new Date().toISOString(), status:'New', ...payload })
-        localStorage.setItem('abhi_demo_applications', JSON.stringify(saved))
+        const isLocalDemo = ['localhost', '127.0.0.1'].includes(window.location.hostname)
+        if (isLocalDemo) {
+          const saved = JSON.parse(localStorage.getItem('abhi_demo_applications') || '[]')
+          saved.unshift({ id: crypto.randomUUID(), created_at:new Date().toISOString(), status:'New', ...payload })
+          localStorage.setItem('abhi_demo_applications', JSON.stringify(saved))
+        } else {
+          throw new Error('SUBMISSION_FAILED')
+        }
       }
+
       setSent(true)
-      e.currentTarget.reset()
+      form.reset()
+    } catch {
+      setFormError(lang === 'ru'
+        ? 'Не удалось отправить заявку. Проверь интернет и попробуй ещё раз. Если ошибка повторится, свяжись с менеджером напрямую.'
+        : 'We could not send your application. Check your connection and try again. If the problem continues, contact your manager directly.')
     } finally {
       setSending(false)
     }
@@ -267,20 +306,20 @@ export default function Home() {
 
   return (
     <main id="top">
-      <div className="top-note"><ShieldCheck size={14}/> 18+ • Real broadcasters only • International support</div>
+      <div className="top-note"><ShieldCheck size={14}/> {lang==='ru'?'18+ • Только реальные стримеры • Международная поддержка':'18+ • Real broadcasters only • International support'}</div>
       <header className="header">
         <Logo />
         <nav className="desktop-nav">
           {t.nav.map((x,i)=><a key={x} href={['#how','#benefits','#bonuses','#faq','#apply'][i]}>{x}</a>)}
         </nav>
         <div className="header-actions">
-          <button className="lang-switch" onClick={()=>setLang(lang==='en'?'ru':'en')}><Globe2 size={15}/>{lang.toUpperCase()}</button>
+          <button className="lang-switch" type="button" aria-label={lang==='ru'?'Switch to English':'Переключить на русский'} onClick={()=>setLang(lang==='en'?'ru':'en')}><Globe2 size={15}/>{lang.toUpperCase()}</button>
           <a className="button small gold" href="#apply">{t.join}</a>
-          <button className="menu-btn" onClick={()=>setMenu(!menu)}>{menu?<X/>:<Menu/>}</button>
+          <button className="menu-btn" type="button" aria-label={menu?(lang==='ru'?'Закрыть меню':'Close menu'):(lang==='ru'?'Открыть меню':'Open menu')} aria-expanded={menu} aria-controls="mobile-navigation" onClick={()=>setMenu(!menu)}>{menu?<X/>:<Menu/>}</button>
         </div>
       </header>
 
-      {menu && <div className="mobile-nav">
+      {menu && <div className="mobile-nav" id="mobile-navigation">
         {t.nav.map((x,i)=><a key={x} onClick={()=>setMenu(false)} href={['#how','#benefits','#bonuses','#faq','#apply'][i]}>{x}</a>)}
         <a className="button gold" href="#apply" onClick={()=>setMenu(false)}>{t.join}</a>
       </div>}
@@ -303,18 +342,18 @@ export default function Home() {
         <div className="creator-visual">
           <div className="visual-glow"/>
           <div className="streamer-proof">
-            <img src="/assets/abhigreen-streamer.jpg" alt="Example of a female creator live streaming on Tango"/>
+            <img src="/assets/abhigreen-streamer.jpg" loading="eager" alt={lang==='ru'?'Пример прямого эфира стримера ABHIGREEN в Tango':'Example of an ABHIGREEN creator live streaming on Tango'}/>
             <div className="streamer-proof-badge"><span>● LIVE</span><b>ABHIGREEN CREATOR</b></div>
           </div>
-          <div className="float-card card-one"><HeartHandshake/><span>Personal manager<br/><b>from day one</b></span></div>
-          <div className="float-card card-two"><Globe2/><span>International<br/><b>RU / EN</b></span></div>
+          <div className="float-card card-one"><HeartHandshake/><span>{lang==='ru'?'Личный менеджер':'Personal manager'}<br/><b>{lang==='ru'?'с первого дня':'from day one'}</b></span></div>
+          <div className="float-card card-two"><Globe2/><span>{lang==='ru'?'Международно':'International'}<br/><b>RU / EN</b></span></div>
         </div>
       </section>
 
       <section className="section referral-section">
         <div className="referral-card tango-code-card">
           <div>
-            <div className="eyebrow gold-text"><Target size={15}/> TANGO • AGENCY CONNECTION</div>
+            <div className="eyebrow gold-text"><Target size={15}/> {lang==='ru'?'TANGO • ПОДКЛЮЧЕНИЕ К АГЕНТСТВУ':'TANGO • AGENCY CONNECTION'}</div>
             <h2>{t.tangoCodeTitle}</h2>
             <p>{t.tangoCodeSub}</p>
           </div>
@@ -324,7 +363,7 @@ export default function Home() {
                 <small>ANDROID</small>
                 <h3>{lang==='ru'?'Нажми здесь, чтобы присоединиться':'Click here to join now'}</h3>
                 <p className="tango-code-help">{lang==='ru'?'Реферальная ссылка работает для Android.':'The referral link is for Android.'}</p>
-                <a className="button gold tango-copy" href="https://tango.onelink.me/RCIH/cdw49a6s" target="_blank" rel="noreferrer">
+                <a className="button gold tango-copy" href="https://tango.onelink.me/RCIH/cdw49a6s" target="_blank" rel="noopener noreferrer">
                   {lang==='ru'?'Открыть реферальную ссылку':'Open referral link'} <ArrowRight size={17}/>
                 </a>
               </div>
@@ -332,7 +371,7 @@ export default function Home() {
                 <small>IPHONE / IOS</small>
                 <h3>{lang==='ru'?'Создай аккаунт через tango.me':'Create your account on tango.me'}</h3>
                 <p className="tango-code-help">{lang==='ru'?'После регистрации открой Tango → Settings → Join an Agency и введи код ниже. Для нового аккаунта — в первые 5 часов.':'After signup open Tango → Settings → Join an Agency and enter the code below. For a new account, do this within the first 5 hours.'}</p>
-                <a className="button gold tango-copy" href="https://www.tango.me/" target="_blank" rel="noreferrer">
+                <a className="button gold tango-copy" href="https://www.tango.me/" target="_blank" rel="noopener noreferrer">
                   {lang==='ru'?'Открыть tango.me':'Open tango.me'} <ArrowRight size={17}/>
                 </a>
               </div>
@@ -347,15 +386,15 @@ export default function Home() {
         </div>
         <div className="join-guide-panel">
           <div className="join-guide-copy">
-            <div className="eyebrow gold-text"><Target size={15}/> STEP-BY-STEP</div>
+            <div className="eyebrow gold-text"><Target size={15}/> {lang==='ru'?'ПОШАГОВАЯ ИНСТРУКЦИЯ':'STEP-BY-STEP'}</div>
             <h3>{lang==='ru'?'Инструкция: как подключиться к ABHIGREEN':'How to join ABHIGREEN on Tango'}</h3>
             <p>{lang==='ru'?'Сохрани эту инструкцию: здесь показаны шаги для iPhone, Android, код агентства и бонус.':'Save this guide: it shows the iPhone and Android steps, the agency code and the joining bonus.'}</p>
-            <a className="button ghost" href="/assets/abhigreen-join-guide.jpg" target="_blank" rel="noreferrer">
+            <a className="button ghost" href="/assets/abhigreen-join-guide.jpg" target="_blank" rel="noopener noreferrer">
               {lang==='ru'?'Открыть инструкцию крупно':'Open full-size guide'} <ArrowRight size={16}/>
             </a>
           </div>
-          <a className="join-guide-image" href="/assets/abhigreen-join-guide.jpg" target="_blank" rel="noreferrer">
-            <img src="/assets/abhigreen-join-guide.jpg" alt="How to join ABHIGREEN on Tango step-by-step guide"/>
+          <a className="join-guide-image" href="/assets/abhigreen-join-guide.jpg" target="_blank" rel="noopener noreferrer">
+            <img src="/assets/abhigreen-join-guide.jpg" loading="lazy" alt={lang==='ru'?'Пошаговая инструкция подключения к ABHIGREEN в Tango':'How to join ABHIGREEN on Tango step-by-step guide'}/>
           </a>
         </div>
       </section>
@@ -395,7 +434,7 @@ export default function Home() {
             <h3>{settings.milestone_title}</h3><p>{settings.milestone_reward}</p>
           </article>
           <article className="bonus-card ftr-card">
-            <span className="bonus-icon"><Target/></span><small>Education</small>
+            <span className="bonus-icon"><Target/></span><small>{lang==='ru'?'Обучение':'Education'}</small>
             <h3>{t.growthTitle}</h3><p>{t.growth}</p>
           </article>
         </div>
@@ -423,8 +462,8 @@ export default function Home() {
       <section className="section community-section">
         <div className="community-card">
           <div className="community-icon"><Users/></div>
-          <div><small>PRIVATE CREATOR SPACE</small><h2>{t.community}</h2><p>{t.communitySub}</p></div>
-          {settings.telegram_url ? <a className="button ghost" target="_blank" rel="noreferrer" href={settings.telegram_url}>{t.telegram}<ArrowRight size={16}/></a> : <a className="button ghost" href="#apply">{t.join}<ArrowRight size={16}/></a>}
+          <div><small>{lang==='ru'?'ЗАКРЫТОЕ СООБЩЕСТВО СТРИМЕРОВ':'PRIVATE CREATOR SPACE'}</small><h2>{t.community}</h2><p>{t.communitySub}</p></div>
+          {settings.telegram_url ? <a className="button ghost" target="_blank" rel="noopener noreferrer" href={settings.telegram_url}>{t.telegram}<ArrowRight size={16}/></a> : <a className="button ghost" href="#apply">{t.join}<ArrowRight size={16}/></a>}
         </div>
       </section>
 
@@ -432,8 +471,8 @@ export default function Home() {
         <div className="section-head"><div><span className="section-number">05</span><h2>{t.faq}</h2></div></div>
         <div className="faq-list">
           {faqItems.map(([q,a],i)=><div className={'faq-item '+(openFaq===i?'open':'')} key={q}>
-            <button onClick={()=>setOpenFaq(openFaq===i?null:i)}><span>{q}</span><ChevronDown/></button>
-            <div className="faq-answer"><p>{a}</p></div>
+            <button type="button" aria-expanded={openFaq===i} aria-controls={`faq-answer-${i}`} onClick={()=>setOpenFaq(openFaq===i?null:i)}><span>{q}</span><ChevronDown/></button>
+            <div className="faq-answer" id={`faq-answer-${i}`}><p>{a}</p></div>
           </div>)}
         </div>
       </section>
@@ -442,38 +481,40 @@ export default function Home() {
         <div className="application-shell">
           <div className="application-intro">
             <span className="section-number">06</span><h2>{t.applyTitle}</h2><p>{t.applySub}</p>
-            <div className="mini-points"><span><Check/>18+</span><span><Check/>Real creators</span><span><Check/>RU / EN support</span></div>
+            <div className="mini-points"><span><Check/>18+</span><span><Check/>{lang==='ru'?'Реальные стримеры':'Real creators'}</span><span><Check/>{lang==='ru'?'Поддержка RU / EN':'RU / EN support'}</span></div>
           </div>
-          {sent ? <div className="success-panel"><BadgeCheck size={44}/><h3>{t.success}</h3><button className="button ghost" onClick={()=>setSent(false)}>OK</button></div> :
-          <form className="application-form" onSubmit={submit}>
+          {sent ? <div className="success-panel" role="status" aria-live="polite"><BadgeCheck size={44}/><h3>{t.success}</h3><button className="button ghost" type="button" onClick={()=>setSent(false)}>OK</button></div> :
+          <form className="application-form" onSubmit={submit} noValidate={false}>
+            <label className="hp-field" aria-hidden="true">Website<input name="website" tabIndex={-1} autoComplete="off"/></label>
             <div className="form-grid">
-              <label>{t.form.name}<input name="name" required/></label>
-              <label>{t.form.country}<input name="country" required/></label>
-              <label>{t.form.languages}<input name="languages"/></label>
-              <label>{t.form.telegram}<input name="telegram"/></label>
-              <label>{t.form.whatsapp}<input name="whatsapp"/></label>
-              <label>{t.form.instagram}<input name="instagram"/></label>
-              <label>{t.form.platform}<input name="platform" placeholder="Tango, SuperLive, Bigo..."/></label>
-              <label>{t.form.username}<input name="username"/></label>
-              <label className="full">{t.form.experience}<textarea name="experience" rows={3}/></label>
-              <label>{t.form.hours}<input name="hours_per_week" placeholder="10, 20, 30..."/></label>
-              <label className="full">{t.form.message}<textarea name="message" rows={4}/></label>
+              <label>{t.form.name}<input name="name" required maxLength={120} autoComplete="name"/></label>
+              <label>{t.form.country}<input name="country" required maxLength={100} autoComplete="country-name"/></label>
+              <label>{t.form.languages}<input name="languages" maxLength={200}/></label>
+              <label>{t.form.telegram}<input name="telegram" maxLength={150} autoComplete="off" placeholder="@username"/></label>
+              <label>{t.form.whatsapp}<input name="whatsapp" maxLength={150} autoComplete="tel" inputMode="tel"/></label>
+              <label>{t.form.instagram}<input name="instagram" maxLength={150} autoComplete="off" placeholder="@username"/></label>
+              <label>{t.form.platform}<input name="platform" maxLength={100} placeholder="Tango, SuperLive, Bigo..."/></label>
+              <label>{t.form.username}<input name="username" maxLength={150}/></label>
+              <label className="full">{t.form.experience}<textarea name="experience" rows={3} maxLength={1000}/></label>
+              <label>{t.form.hours}<input name="hours_per_week" maxLength={80} inputMode="numeric" placeholder="10, 20, 30..."/></label>
+              <label className="full">{t.form.message}<textarea name="message" rows={4} maxLength={2000}/></label>
             </div>
             <label className="check-row"><input type="checkbox" name="age_confirmed" required/><span>{t.age}</span></label>
-            <label className="check-row"><input type="checkbox" name="consent" required/><span>{t.consent} <a href="/privacy">Privacy</a> / <a href="/terms">Terms</a></span></label>
-            <button className="button gold submit-button" disabled={sending}>{sending?t.sending:t.submit}<ArrowRight size={17}/></button>
+            <label className="check-row"><input type="checkbox" name="consent" required/><span>{t.consent} <a href="/privacy">{lang==='ru'?'Политика конфиденциальности':'Privacy Policy'}</a> / <a href="/terms">{lang==='ru'?'Условия':'Terms'}</a></span></label>
+            {formError&&<div className="form-error" role="alert" aria-live="polite"><AlertCircle size={18}/><span>{formError}</span></div>}
+            <button className="button gold submit-button" disabled={sending} aria-busy={sending}>{sending?t.sending:t.submit}<ArrowRight size={17}/></button>
           </form>}
         </div>
       </section>
 
       <footer className="footer">
         <div><Logo/><p>{t.footer}</p></div>
-        <div className="footer-links"><a href="/privacy">Privacy Policy</a><a href="/terms">Terms & Conditions</a></div>
-        <div className="footer-socials">{socialLinks.map(([name,url,Icon])=><a key={name as string} href={url as string} target="_blank" rel="noreferrer"><Icon size={17}/>{name as string}</a>)}</div>
+        <div className="footer-links"><a href="/privacy">{lang==='ru'?'Политика конфиденциальности':'Privacy Policy'}</a><a href="/terms">{lang==='ru'?'Условия использования':'Terms & Conditions'}</a></div>
+        <div className="footer-socials">{socialLinks.map(([name,url,Icon])=><a key={name as string} href={url as string} target="_blank" rel="noopener noreferrer"><Icon size={17}/>{name as string}</a>)}</div>
         <small>© {new Date().getFullYear()} ABHIGREEN. 18+ only.</small>
       </footer>
 
-      {socialLinks.length>0 && <div className="floating-socials">{socialLinks.slice(0,2).map(([name,url,Icon])=><a aria-label={name as string} key={name as string} href={url as string} target="_blank" rel="noreferrer"><Icon/></a>)}</div>}
+      {socialLinks.length>0 && <div className="floating-socials">{socialLinks.slice(0,2).map(([name,url,Icon])=><a aria-label={name as string} key={name as string} href={url as string} target="_blank" rel="noopener noreferrer"><Icon/></a>)}</div>}
     </main>
   )
 }

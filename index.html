@@ -11,6 +11,8 @@
   <meta property="og:description" content="Training, personal support, Tango connection and a $15 joining bonus for eligible new creators.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://mynameisnastasya.github.io/tango/">
+  <meta property="og:image" content="https://mynameisnastasya.github.io/tango/assets/abhigreen-streamer.jpg">
+  <meta name="twitter:card" content="summary_large_image">
   <title>ABHIGREEN — Tango Live Streaming Agency</title>
   <link rel="stylesheet" href="./site.css">
 </head>
@@ -26,7 +28,7 @@
     <div class="header-actions">
       <button id="langButton" class="lang">RU</button>
       <a class="button primary small" href="#apply" data-i18n="navApply">Хочу в агентство</a>
-      <button id="menuButton" class="menu-button" aria-label="Menu">☰</button>
+      <button id="menuButton" class="menu-button" type="button" aria-label="Menu" aria-expanded="false" aria-controls="mobileMenu">☰</button>
     </div>
   </header>
 
@@ -223,18 +225,19 @@
           <div class="apply-badges"><span>18+</span><span>RU / EN</span><span data-i18n="remote">Удалённо</span></div>
         </div>
         <form id="applicationForm" class="application-form">
+          <label class="hp-field" aria-hidden="true">Website<input name="website" tabindex="-1" autocomplete="off"></label>
           <div class="form-grid">
-            <label><span data-i18n="fName">Как тебя зовут?</span><input name="name" required></label>
-            <label><span data-i18n="fCountry">Страна</span><input name="country" required></label>
-            <label>Telegram<input name="telegram" placeholder="@username"></label>
-            <label>WhatsApp<input name="whatsapp"></label>
+            <label><span data-i18n="fName">Как тебя зовут?</span><input name="name" required maxlength="120" autocomplete="name"></label>
+            <label><span data-i18n="fCountry">Страна</span><input name="country" required maxlength="100" autocomplete="country-name"></label>
+            <label>Telegram<input name="telegram" maxlength="150" placeholder="@username" autocomplete="off"></label>
+            <label>WhatsApp<input name="whatsapp" maxlength="150" inputmode="tel" autocomplete="tel"></label>
             <label><span data-i18n="fExperience">Есть опыт стримов?</span><select name="experience"><option value="No">Нет, начинаю с нуля</option><option value="Some">Немного</option><option value="Yes">Да, уже стримлю</option></select></label>
-            <label><span data-i18n="fTango">Если уже есть Tango — username</span><input name="username"></label>
-            <label class="full"><span data-i18n="fHours">Сколько времени в неделю готова уделять?</span><input name="hours_per_week" placeholder="Например: 10–15 часов"></label>
-            <label class="full"><span data-i18n="fMessage">Расскажи пару слов о себе</span><textarea name="message" rows="4"></textarea></label>
+            <label><span data-i18n="fTango">Если уже есть Tango — username</span><input name="username" maxlength="150"></label>
+            <label class="full"><span data-i18n="fHours">Сколько времени в неделю готова уделять?</span><input name="hours_per_week" maxlength="80" inputmode="numeric" placeholder="Например: 10–15 часов"></label>
+            <label class="full"><span data-i18n="fMessage">Расскажи пару слов о себе</span><textarea name="message" rows="4" maxlength="2000"></textarea></label>
           </div>
           <label class="check-row"><input name="age_confirmed" type="checkbox" required><span data-i18n="age">Мне 18 лет или больше.</span></label>
-          <label class="check-row"><input name="consent" type="checkbox" required><span><span data-i18n="consent">Я согласна с Privacy Policy и Terms.</span> <a href="./privacy.html">Privacy</a> / <a href="./terms.html">Terms</a></span></label>
+          <label class="check-row"><input name="consent" type="checkbox" required><span><span data-i18n="consent">Я согласна с политикой конфиденциальности и условиями использования.</span> <a href="./privacy.html">Privacy</a> / <a href="./terms.html">Terms</a></span></label>
           <button class="button primary submit" type="submit"><span data-i18n="send">Отправить заявку</span> →</button>
           <div id="formResult"></div>
         </form>

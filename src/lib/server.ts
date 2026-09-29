@@ -1,3 +1,4 @@
+import { timingSafeEqual } from 'node:crypto'
 import { NextRequest } from 'next/server'
 
 export const DEFAULT_SETTINGS = {
@@ -17,7 +18,12 @@ export function isConfigured() {
 export function isAdmin(request: NextRequest) {
   const expected = process.env.ADMIN_KEY
   const supplied = request.headers.get('x-admin-key')
-  return Boolean(expected && supplied && expected === supplied)
+  if (!expected || !supplied) return false
+
+  const expectedBuffer = Buffer.from(expected)
+  const suppliedBuffer = Buffer.from(supplied)
+  if (expectedBuffer.length !== suppliedBuffer.length) return false
+  return timingSafeEqual(expectedBuffer, suppliedBuffer)
 }
 
 export async function supabase(path: string, init: RequestInit = {}) {

@@ -60,7 +60,7 @@ const copy = {
     growthTitle: 'Growth support',
     growth: 'We help you improve your profile, live format, audience engagement and monetization strategy as you grow.',
     looking: 'Who We Are Looking For',
-    lookingSub: 'Creators who want to communicate, grow and broadcast consistently.',
+    lookingSub: 'Women 18+ who want to communicate, grow and broadcast consistently.',
     warning: 'Prerecorded streams, fake broadcasters, impersonation, or attempts to bypass platform rules are not accepted.',
     longTitle: 'Your manager from day one.',
     longSub: 'Your agency for the long run.',
@@ -113,7 +113,7 @@ const copy = {
     growthTitle: 'Поддержка роста',
     growth: 'Помогаем улучшать профиль, формат эфиров, общение с аудиторией и стратегию монетизации по мере роста.',
     looking: 'Кого мы ищем',
-    lookingSub: 'Стримеров 18+, которым комфортно общаться, развиваться и регулярно выходить в эфир.',
+    lookingSub: 'Девушек 18+, которым комфортно общаться, развиваться и регулярно выходить в эфир.',
     warning: 'Записанные трансляции, фейковые аккаунты, выдача себя за другого человека и обход правил платформы не допускаются.',
     longTitle: 'Твой менеджер с первого дня.',
     longSub: 'Твоё агентство на долгий путь.',
@@ -134,7 +134,7 @@ const copy = {
       hours:'Сколько часов в неделю можешь выходить в эфир?', message:'Коротко о себе'
     },
     age: 'Мне 18 лет или больше',
-    footer: 'Поддержка и развитие реальных стримеров 18+.',
+    footer: 'Помогаем девушкам 18+ уверенно развиваться в прямых эфирах.',
   }
 }
 

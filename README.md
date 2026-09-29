@@ -1,6 +1,6 @@
 # ABHIGREEN
 
-Bilingual recruiting, onboarding and operations website for **ABHIGREEN**, focused on real adult live-streaming creators.
+Bilingual recruiting, onboarding and operations website for **ABHIGREEN**, focused on women 18+ who want to work with live streaming.
 
 ## What is included
 

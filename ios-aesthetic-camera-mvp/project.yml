@@ -1,0 +1,25 @@
+name: AestheticCameraMVP
+options:
+  minimumXcodeGenVersion: 2.38.0
+  deploymentTarget:
+    iOS: "16.0"
+settings:
+  base:
+    PRODUCT_BUNDLE_IDENTIFIER: com.nastaysa.aestheticcamera.mvp
+    MARKETING_VERSION: 1.0
+    CURRENT_PROJECT_VERSION: 1
+    SWIFT_VERSION: 5.0
+    TARGETED_DEVICE_FAMILY: 1
+targets:
+  AestheticCameraMVP:
+    type: application
+    platform: iOS
+    deploymentTarget: "16.0"
+    sources:
+      - path: AestheticCameraMVP
+    settings:
+      base:
+        INFOPLIST_FILE: AestheticCameraMVP/Info.plist
+        ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
+    info:
+      path: AestheticCameraMVP/Info.plist

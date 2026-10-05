@@ -9,17 +9,29 @@ on:
     paths:
       - "automation/safe_browser.py"
       - ".github/workflows/python-safe-check.yml"
+  workflow_dispatch:
 
 permissions:
   contents: read
 
 jobs:
-  syntax:
+  smoke-test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: Compile safe launcher
+
+      - name: Install Selenium
+        run: python -m pip install -U selenium
+
+      - name: Compile launcher
         run: python -m py_compile automation/safe_browser.py
+
+      - name: Show Chrome version
+        run: google-chrome --version || chromium-browser --version || chromium --version
+
+      - name: Launch Tango headlessly
+        run: python automation/safe_browser.py --headless

@@ -7,3 +7,6 @@ out
 .vercel
 *.log
 .DS_Store
+
+automation/profiles/
+automation/__pycache__/

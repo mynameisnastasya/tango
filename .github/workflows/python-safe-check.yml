@@ -1,0 +1,25 @@
+name: Safe Python check
+
+on:
+  push:
+    paths:
+      - "automation/safe_browser.py"
+      - ".github/workflows/python-safe-check.yml"
+  pull_request:
+    paths:
+      - "automation/safe_browser.py"
+      - ".github/workflows/python-safe-check.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  syntax:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Compile safe launcher
+        run: python -m py_compile automation/safe_browser.py

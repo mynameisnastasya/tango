@@ -997,7 +997,8 @@ def wipe_profile_for_fresh_start(profile_path: str) -> None:
             except Exception:
                 pass
     try:
-        for item in os.listdir(profile_path):            if item in keep_files:
+        for item in os.listdir(profile_path):
+            if item in keep_files:
                 continue
             full = os.path.join(profile_path, item)
             try:
@@ -1996,7 +1997,8 @@ def get_diamonds(driver):
         # Извлекаем ссылку на профиль из текущего URL
         try:
             cur_url = driver.current_url or ""
-            if "/profile/" in cur_url or "tango.me" in cur_url:                profile_url = cur_url
+            if "/profile/" in cur_url or "tango.me" in cur_url:
+                profile_url = cur_url
                 log(f"Профиль URL: {profile_url}", "INFO")
         except Exception:
             pass
@@ -2996,6 +2998,7 @@ def close_stream_with_confirm(driver, *, timeout_btn: int = 30, timeout_confirm:
         log(f"Не нашли кнопку подтверждения закрытия стрима ({where})", "WARNING")
         return False
 
+
 def pulsz_login_by_email(driver, email: str, cfg: dict) -> bool:
     driver.get('https://www.pulsz.tv/')
     time.sleep(20)
@@ -3994,7 +3997,8 @@ def main():
                 profile_changed = True
                 if block_dolboeba and (not block_done):
                     block_done = True
-            if elapsed >= wait_time:                break
+            if elapsed >= wait_time:
+                break
             time.sleep(loop_tick)
             if is_dead():
                 log("Аккаунт умер во время ожидания", "ERROR")

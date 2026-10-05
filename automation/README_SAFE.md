@@ -1,61 +1,45 @@
-# Safe local browser mode
+# Tango Local Launcher
 
-This folder contains the uploaded automation sources plus a separate safe/manual launcher.
+A local web interface for launching a normal Chrome session with one persistent profile.
 
-## What the safe launcher does
+## Easiest way
 
-`safe_browser.py` opens Tango in a normal Chrome session and keeps one persistent local Chrome profile in:
+### macOS
+Double-click `start_web.command`.
+
+If macOS blocks it the first time, open Terminal in this folder and run:
+
+```bash
+chmod +x start_web.command
+./start_web.command
+```
+
+### Windows
+Double-click `start_web.bat`.
+
+The launcher installs the small Python dependencies and opens:
 
 ```text
-automation/profiles/manual/
+http://127.0.0.1:8765
 ```
 
-It does **not** spoof browser/device fingerprints, rotate proxies or VPN locations, scrape OTP codes, or automate account registration.
+Then press **Запустить Tango**.
 
-## Requirements
-
-- Python 3.10+
-- Google Chrome
-- Selenium 4.6+
-
-Install Selenium:
+## Manual start
 
 ```bash
-python -m pip install -U selenium
+python -m pip install -r automation/requirements-safe.txt
+python automation/web_launcher.py
 ```
 
-## Run
+## What it does
 
-From the repository root:
+- gives you a browser-based local control panel;
+- launches Google Chrome on the same computer;
+- opens Tango;
+- keeps one persistent Chrome profile in `automation/profiles/manual/`;
+- lets you stop the Chrome session from the page.
 
-```bash
-python automation/safe_browser.py
-```
+The server listens only on `127.0.0.1`, so it is not exposed to the local network or Internet.
 
-Or from the `automation` directory:
-
-```bash
-python safe_browser.py
-```
-
-Selenium Manager will normally download/resolve the matching ChromeDriver automatically.
-
-## Quick launch check
-
-```bash
-python automation/safe_browser.py --headless
-```
-
-A successful run prints the opened URL and page title.
-
-## Troubleshooting
-
-If Chrome does not start:
-
-```bash
-python --version
-python -m pip show selenium
-python -m pip install -U selenium
-```
-
-Make sure Google Chrome itself is installed and can be opened normally.
+This launcher does not implement fingerprint spoofing, proxy/VPN rotation, OTP scraping, or automated account registration.

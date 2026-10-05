@@ -4,10 +4,14 @@ on:
   push:
     paths:
       - "automation/safe_browser.py"
+      - "automation/web_launcher.py"
+      - "automation/requirements-safe.txt"
       - ".github/workflows/python-safe-check.yml"
   pull_request:
     paths:
       - "automation/safe_browser.py"
+      - "automation/web_launcher.py"
+      - "automation/requirements-safe.txt"
       - ".github/workflows/python-safe-check.yml"
   workflow_dispatch:
 
@@ -19,19 +23,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-
-      - name: Install Selenium
-        run: python -m pip install -U selenium
-
-      - name: Compile launcher
-        run: python -m py_compile automation/safe_browser.py
-
+      - name: Install dependencies
+        run: python -m pip install -r automation/requirements-safe.txt
+      - name: Compile launchers
+        run: python -m py_compile automation/safe_browser.py automation/web_launcher.py
       - name: Show Chrome version
         run: google-chrome --version || chromium-browser --version || chromium --version
-
       - name: Launch Tango headlessly
         run: python automation/safe_browser.py --headless

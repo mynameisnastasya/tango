@@ -34,6 +34,7 @@ jobs:
           mkdir -p _site
           cp index.html site.css site.js admin.html privacy.html terms.html robots.txt sitemap.xml .nojekyll _site/
           cp -R assets _site/assets
+          cp -R gift-hunter _site/gift-hunter
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
